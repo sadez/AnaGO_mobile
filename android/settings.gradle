@@ -1,0 +1,3 @@
+rootProject.name = 'anaGo'
+
+include ':app'
