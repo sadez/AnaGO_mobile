@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet, View, TextInput, Dimensions, Platform, Text, TouchableOpacity,
+  StyleSheet, View, TextInput, Dimensions, Text, TouchableOpacity,
 } from 'react-native';
-import Header from './Header';
-import MapContainer from './MapContainer';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
-const isIphoneX = Platform.OS === 'ios' && (SCREEN_HEIGHT === 812 || SCREEN_WIDTH === 812);
 
-class MainMAp extends Component {
+class FormSearch extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
@@ -17,8 +14,7 @@ class MainMAp extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Header></Header>
+      <React.Fragment>
         <View style={styles.containerTextDepart}>
           <TextInput
             style={styles.inputStyle}
@@ -40,19 +36,12 @@ class MainMAp extends Component {
             <Text style = {{ color: 'white', fontSize: 18, fontWeight: 'bold' }}> AnaGO </Text>
           </TouchableOpacity>
         </View>
-
-        <MapContainer></MapContainer>
-
-     </View>
+      </React.Fragment>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-  },
   containerTextDepart: {
     position: 'absolute',
     top: 80,
@@ -93,11 +82,13 @@ const styles = StyleSheet.create({
   inputStyle: {
     height: 40,
     width: SCREEN_WIDTH * 2 / 3,
+    padding: 10,
     borderColor: 'gray',
     borderWidth: 1,
     backgroundColor: 'white',
-    borderRadius: 10,
+    borderRadius: 5,
+    fontSize: 16,
   },
 });
 
-export default MainMAp;
+export default FormSearch;

@@ -66,11 +66,37 @@ function user(state = initialUserState, action) {
   }
 }
 
+// Reducer of user and token
+const initialMapState = {
+  positionMarker1: {},
+  positionMarker2: {},
+  dataEndpoint: {},
+  selectedRoute: {},
+  isRoutes: false,
+};
+
+function map(state = initialUserState, action) {
+  switch (action.type) {
+    case 'ADD_POSITION1':
+      return { ...state, positionMarker1: action.payload };
+    case 'ADD_POSITION2':
+      return { ...state, positionMarker2: action.payload };
+    case 'ADD_DATA':
+      return { ...state, dataEndpoint: action.payload };
+    case 'SELECT_ROUTE':
+      return { ...state, selectedRoute: action.payload };
+    case 'SWITCH_ROUTES':
+      return { ...state, isRoutes: !state.isRoutes };
+    default:
+      return state;
+  }
+}
 
 const AppReducer = combineReducers({
   nav,
   auth,
   user,
+  map,
 });
 
 const rootReducer = (state, action) => {

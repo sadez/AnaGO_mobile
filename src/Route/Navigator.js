@@ -5,7 +5,8 @@
 import { connect } from 'react-redux';
 import { createStackNavigator } from 'react-navigation';
 import { reduxifyNavigator, createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers';
-import MainMap from '../components/MainMap';
+import MainMap from '../components/mainPage/MainMap';
+import MainResult from '../components/resultPage/MainResult';
 
 const middleware = createReactNavigationReduxMiddleware(
   'root',
@@ -32,11 +33,12 @@ const fade = (props) => {
 
 const RootNavigator = createStackNavigator({
   MainMap: { screen: MainMap },
+  MainResult: { screen: MainResult },
 },
 {
   headerMode: 'none',
   mode: 'modal',
-  initialRouteName: 'MainMap',
+  initialRouteName: 'MainResult',
 });
 
 const AppWithNavigationState = reduxifyNavigator(RootNavigator, 'root');
