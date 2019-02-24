@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, FlatList } from 'react-native';
 import { Accordion, Text, Icon } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import Moment from 'react-moment';
@@ -56,17 +56,39 @@ class DetailAccordion extends Component {
     );
   }
 
-  _renderContent(item) {
+  _renderContent(i) {
+    const _renderItem = ({ item }) => (
+      <View style = {{
+        flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', alignContent: 'center',
+      }}>
+
+        <View style = {{ width: '20%' }}>
+          <Moment style={{ fontSize: 10, paddingHorizontal: 8 }} format="HH:mm" unix element={Text} >{item.startTime}</Moment>
+          <Icon style={{ fontSize: 18, paddingHorizontal: 8 }} name="md-walk" />
+        </View>
+        <View style = {{ width: '10%' }}>
+          <Icon style={{ fontSize: 18, paddingHorizontal: 8 }} name="md-pin" />
+          <View style={styles.circle} />
+          <View style={styles.circle} />
+          <View style={styles.circle} />
+          <View style={styles.circle} />
+          <View style={styles.circle} />
+        </View>
+        <View style = {{ width: '60%', backgroundColor: 'grey' }}>
+          <Text>{item.mode}</Text>
+        </View>
+        <View style = {{ width: '10%', backgroundColor: 'blue' }}><Text>{item.mode}</Text></View>
+
+      </View>
+
+    );
+
     return (
-     <Text
-       style={{
-         backgroundColor: '#e3f1f1',
-         padding: 10,
-         fontStyle: 'italic',
-       }}
-     >
-       {item.content}
-     </Text>
+        <FlatList
+          data={i.legs}
+          renderItem={_renderItem}
+          keyExtractor={(item, index) => item.legGeometry.points}
+        />
     );
   }
 
@@ -74,7 +96,7 @@ class DetailAccordion extends Component {
     return (
         <Accordion
           dataArray={this.props.data.plan.itineraries}
-          expanded={true}
+          expanded={0}
           renderHeader={this._renderHeader}
           renderContent={this._renderContent}
           />
@@ -87,6 +109,12 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 5,
     backgroundColor: 'red',
+  },
+  circle: {
+    width: 10,
+    height: 10,
+    borderRadius: 10 / 2,
+    backgroundColor: 'grey',
   },
 });
 

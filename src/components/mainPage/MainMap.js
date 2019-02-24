@@ -16,7 +16,7 @@ class MainMap extends Component {
       <View style={styles.container}>
         <Header isHome></Header>
         <FormSearch></FormSearch>
-        <MapContainer></MapContainer>
+        {/* <MapContainer></MapContainer> */}
      </View>
     );
   }
