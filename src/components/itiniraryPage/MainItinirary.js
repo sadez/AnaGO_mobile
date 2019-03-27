@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet, View, FlatList, TextInput, Dimensions, TouchableOpacity,
+  StyleSheet, View, TouchableOpacity,
 } from 'react-native';
 import { Text, Icon } from 'native-base';
 import { connect } from 'react-redux';
-import Moment from 'react-moment';
 import WalkRoute from '../resultPage/routes/WalkRoute';
 import TransitRoute from '../resultPage/routes/TransitRoute';
 import ItiniraryList from './ItiniraryList';
-
-const SCREEN_WIDTH = Dimensions.get('window').width;
-const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class MainItinirary extends Component {
   constructor(props) {
@@ -20,6 +16,10 @@ class MainItinirary extends Component {
 
   render() {
     const { selectedRoute } = this.props;
+    const startTime = new Date(selectedRoute.startTime);
+    const endTime = new Date(selectedRoute.endTime);
+    const startTimeParse = `${startTime.getHours()}:${startTime.getMinutes() < 10 ? '0' : ''}${startTime.getMinutes()}`;
+    const endTimeParse = `${endTime.getHours()}:${endTime.getMinutes() < 10 ? '0' : ''}${endTime.getMinutes()}`;
     return (
       <View>
         <View style={styles.containerBlocDepart}>
@@ -34,23 +34,39 @@ class MainItinirary extends Component {
         {
           selectedRoute.legs
             ? <View style={styles.container}>
-
               <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text style={styles.minuteText}> {'Départ :  18h30'} </Text>
-                <Text style={styles.minuteText}> {'Arrivée : 18h30'} </Text>
+                <Text style={styles.minuteText}> {`Départ : ${startTimeParse}`} </Text>
+                <Text style={styles.minuteText}> {`Arrivée : ${endTimeParse}`}</Text>
               </View>
             <View style={styles.containerTextDepart}>
               {
                 selectedRoute.legs.map((leg, i) => {
-                  if (leg.mode === 'WALK') {
+                  if (leg.mode !== 'WALK') {
+                    let isLast = false;
+                    if (selectedRoute.legs[selectedRoute.legs.length - 1].mode === 'WALK') {
+                      isLast = (i === (selectedRoute.legs.length - 2));
+                    } else {
+                      isLast = (i === (selectedRoute.legs.length - 1));
+                    }
                     return (
-                      <WalkRoute
-                        key={i}
-                        distance={ Math.round(leg.distance * 100 / 100)}
-                        isLast={(i === (selectedRoute.legs.length - 1))}
-                        />
+                        <TransitRoute
+                          style={{ top: 10 }}
+                          type={leg.mode}
+                          key={i}
+                          routeName={leg.routeShortName}
+                          isLast={isLast}
+                          />
                     );
                   }
+                  // if (leg.mode === 'WALK') {
+                  //   return (
+                  //     <WalkRoute
+                  //       key={i}
+                  //       distance={ Math.round(leg.distance * 100 / 100)}
+                  //       isLast={isLast}
+                  //       />
+                  //   );
+                  // }
                   if (leg.mode === 'TAXI') {
                     return (
                       <React.Fragment key={i}>
@@ -61,14 +77,7 @@ class MainItinirary extends Component {
                         <Text style={styles.minuteText}> {'Petit Taxi'} </Text>
                       </React.Fragment>);
                   }
-                  return (
-                      <TransitRoute
-                        type={leg.mode}
-                        key={i}
-                        routeName={leg.routeShortName}
-                        isLast={(i === (selectedRoute.legs.length - 1))}
-                        />
-                  );
+                  return null;
                 })
               }
               <View>
@@ -84,9 +93,7 @@ class MainItinirary extends Component {
             : null
         }
 
-        <View style={styles.containerDetailItinirary}>
-          <ItiniraryList legs={selectedRoute.legs}></ItiniraryList>
-        </View>
+          <ItiniraryList startTimeParse={startTimeParse} endTimeParse={endTimeParse} legs={selectedRoute.legs}></ItiniraryList>
 
       </View>
 
@@ -126,17 +133,6 @@ const styles = StyleSheet.create({
     borderColor: '#1a7746',
     borderWidth: 0.5,
     backgroundColor: '#2bc875',
-    elevation: -1,
-    borderBottomRightRadius: 4,
-    borderBottomLeftRadius: 4,
-    padding: 8,
-    zIndex: 1,
-    marginHorizontal: 0,
-  },
-  containerDetailItinirary: {
-    borderColor: '#1a7746',
-    borderWidth: 0.5,
-    backgroundColor: '#fbfbfb',
     elevation: -1,
     borderBottomRightRadius: 4,
     borderBottomLeftRadius: 4,

@@ -6,7 +6,7 @@ class WalkRoute extends Component {
   render() {
     return (
       <React.Fragment>
-        <View style={{ top: 10, alignItems: 'center' }}>
+        <View style={[this.props.style, { alignItems: 'center' }]}>
             <Icon style={{ fontSize: 35, paddingHorizontal: 8, color: 'grey' }} name="ios-walk" />
             <Text style={styles.directionText2}>{ this.props.distance }{' m'}</Text>
         </View>

@@ -1,1152 +1,1363 @@
 {
-    "requestParameters": {
-        "mode": "WALK,TRANSIT",
-        "arriveBy": "false",
-        "showIntermediateStops": "true",
-        "fromPlace": "33.58981, -7.59333",
-        "toPlace": "33.59072, -7.60570",
-        "maxWalkDistance": "500"
+  "requestParameters": {
+    "mode": "WALK,TRANSIT",
+    "arriveBy": "false",
+    "showIntermediateStops": "true",
+    "fromPlace": "33.58821963230516, -7.637300491333009",
+    "preferredAgencies": "A1",
+    "toPlace": "33.59162397875197, -7.621104241989088",
+    "maxWalkDistance": "700",
+    "maxTransfers": "3"
+  },
+  "plan": {
+    "date": 1553707137000,
+    "from": {
+      "name": "Origin",
+      "lon": -7.637300491333009,
+      "lat": 33.58821963230516,
+      "orig": "",
+      "vertexType": "NORMAL"
     },
-    "plan": {
-        "date": 1533806911000,
-        "from": {
-            "name": "Origin",
-            "lon": -7.59333,
-            "lat": 33.58981,
-            "orig": "",
-            "vertexType": "NORMAL"
-        },
-        "to": {
-            "name": "Destination",
-            "lon": -7.6057,
-            "lat": 33.59072,
-            "orig": "",
-            "vertexType": "NORMAL"
-        },
-        "itineraries": [
-            {
-                "duration": 1455,
-                "startTime": 1533806911000,
-                "endTime": 1533808366000,
-                "walkTime": 349,
-                "transitTime": 204,
-                "waitingTime": 902,
-                "walkDistance": 437.08041353011043,
-                "walkLimitExceeded": false,
-                "elevationLost": 0,
-                "elevationGained": 0,
-                "transfers": 0,
-                "fare": {
-                    "fare": {
-                        "regular": {
-                            "currency": {
-                                "currency": "MAD",
-                                "defaultFractionDigits": 2,
-                                "currencyCode": "MAD",
-                                "symbol": "MAD"
-                            },
-                            "cents": 400
-                        }
-                    },
-                    "details": {
-                        "regular": [
-                            {
-                                "fareId": "1:BUS1",
-                                "price": {
-                                    "currency": {
-                                        "currency": "MAD",
-                                        "defaultFractionDigits": 2,
-                                        "currencyCode": "MAD",
-                                        "symbol": "MAD"
-                                    },
-                                    "cents": 400
-                                },
-                                "routes": [
-                                    "1:R24"
-                                ]
-                            }
-                        ]
-                    }
-                },
-                "legs": [
-                    {
-                        "startTime": 1533806911000,
-                        "endTime": 1533807008000,
-                        "departureDelay": 0,
-                        "arrivalDelay": 0,
-                        "realTime": false,
-                        "distance": 124.623,
-                        "pathway": false,
-                        "mode": "WALK",
-                        "route": "",
-                        "agencyTimeZoneOffset": 3600000,
-                        "interlineWithPreviousLeg": false,
-                        "from": {
-                            "name": "Origin",
-                            "lon": -7.59333,
-                            "lat": 33.58981,
-                            "departure": 1533806911000,
-                            "orig": "",
-                            "vertexType": "NORMAL"
-                        },
-                        "to": {
-                            "name": "Casa Voyageurs",
-                            "stopId": "1:S268",
-                            "lon": -7.5925414,
-                            "lat": 33.5889711,
-                            "arrival": 1533807008000,
-                            "departure": 1533807909000,
-                            "stopIndex": 23,
-                            "stopSequence": 24,
-                            "vertexType": "TRANSIT"
-                        },
-                        "legGeometry": {
-                            "points": "mo_lElajm@CGnDwC",
-                            "length": 3
-                        },
-                        "rentedBike": false,
-                        "transitLeg": false,
-                        "duration": 97,
-                        "intermediateStops": [],
-                        "steps": [
-                            {
-                                "distance": 3.623,
-                                "relativeDirection": "DEPART",
-                                "streetName": "Boulevard d'Oujda",
-                                "absoluteDirection": "NORTHEAST",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": false,
-                                "lon": -7.593344896578051,
-                                "lat": 33.58983864697046,
-                                "elevation": []
-                            },
-                            {
-                                "distance": 121,
-                                "relativeDirection": "RIGHT",
-                                "streetName": "Rue Chatillon",
-                                "absoluteDirection": "SOUTHEAST",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": false,
-                                "lon": -7.5933090000000005,
-                                "lat": 33.5898516,
-                                "elevation": []
-                            }
-                        ]
-                    },
-                    {
-                        "startTime": 1533807909000,
-                        "endTime": 1533808113000,
-                        "departureDelay": 0,
-                        "arrivalDelay": 0,
-                        "realTime": false,
-                        "distance": 1097.008960539376,
-                        "pathway": false,
-                        "mode": "BUS",
-                        "route": "90",
-                        "agencyName": "M'dina Bus",
-                        "agencyUrl": "http://mdinabus.ma/",
-                        "agencyTimeZoneOffset": 3600000,
-                        "routeColor": "FA00FF",
-                        "routeType": 3,
-                        "routeId": "1:R24",
-                        "routeTextColor": "FF0000",
-                        "interlineWithPreviousLeg": false,
-                        "tripShortName": "90 05:30 to Station M'dina Bus 2",
-                        "headsign": "Station M'dina Bus 2",
-                        "agencyId": "A2",
-                        "tripId": "1:R24001",
-                        "serviceDate": "20180809",
-                        "from": {
-                            "name": "Casa Voyageurs",
-                            "stopId": "1:S268",
-                            "lon": -7.5925414,
-                            "lat": 33.5889711,
-                            "arrival": 1533807008000,
-                            "departure": 1533807909000,
-                            "stopIndex": 23,
-                            "stopSequence": 24,
-                            "vertexType": "TRANSIT"
-                        },
-                        "to": {
-                            "name": "CHIMICOLOR",
-                            "stopId": "1:S1242",
-                            "lon": -7.603979,
-                            "lat": 33.589146,
-                            "arrival": 1533808113000,
-                            "departure": 1533808114000,
-                            "stopIndex": 25,
-                            "stopSequence": 26,
-                            "vertexType": "TRANSIT"
-                        },
-                        "legGeometry": {
-                            "points": "cj_lEn|im@ACkEhDWvRAX{@|h@h@lAzEP",
-                            "length": 8
-                        },
-                        "routeShortName": "90",
-                        "routeLongName": "Ligne 90: Bernoussi - Station M'dina Bus 2",
-                        "rentedBike": false,
-                        "transitLeg": true,
-                        "duration": 204,
-                        "intermediateStops": [
-                            {
-                                "name": "Marché de Gros",
-                                "stopId": "1:S999",
-                                "lon": -7.596539999999999,
-                                "lat": 33.590256,
-                                "arrival": 1533808011000,
-                                "departure": 1533808011000,
-                                "stopIndex": 24,
-                                "stopSequence": 25,
-                                "vertexType": "TRANSIT"
-                            }
-                        ],
-                        "steps": []
-                    },
-                    {
-                        "startTime": 1533808114000,
-                        "endTime": 1533808366000,
-                        "departureDelay": 0,
-                        "arrivalDelay": 0,
-                        "realTime": false,
-                        "distance": 312.342,
-                        "pathway": false,
-                        "mode": "WALK",
-                        "route": "",
-                        "agencyTimeZoneOffset": 3600000,
-                        "interlineWithPreviousLeg": false,
-                        "from": {
-                            "name": "CHIMICOLOR",
-                            "stopId": "1:S1242",
-                            "lon": -7.603979,
-                            "lat": 33.589146,
-                            "arrival": 1533808113000,
-                            "departure": 1533808114000,
-                            "stopIndex": 25,
-                            "stopSequence": 26,
-                            "vertexType": "TRANSIT"
-                        },
-                        "to": {
-                            "name": "Destination",
-                            "lon": -7.6057,
-                            "lat": 33.59072,
-                            "arrival": 1533808366000,
-                            "orig": "",
-                            "vertexType": "NORMAL"
-                        },
-                        "legGeometry": {
-                            "points": "ck_lE|clm@WCwAGk@CABADCBCBCBC@C@C@C@E@C?C?EAC?CAMPAH_AhC}@lAb@zA",
-                            "length": 24
-                        },
-                        "rentedBike": false,
-                        "transitLeg": false,
-                        "duration": 252,
-                        "intermediateStops": [],
-                        "steps": [
-                            {
-                                "distance": 86.64,
-                                "relativeDirection": "DEPART",
-                                "streetName": "Boulevard de la Résistance",
-                                "absoluteDirection": "NORTH",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": false,
-                                "lon": -7.60398458898674,
-                                "lat": 33.58914649760335,
-                                "elevation": []
-                            },
-                            {
-                                "distance": 40.051,
-                                "relativeDirection": "CIRCLE_CLOCKWISE",
-                                "streetName": "road",
-                                "absoluteDirection": "NORTHWEST",
-                                "exit": "2",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": false,
-                                "lon": -7.6039019,
-                                "lat": 33.5899226,
-                                "elevation": []
-                            },
-                            {
-                                "distance": 139.139,
-                                "relativeDirection": "LEFT",
-                                "streetName": "Rue Magellan",
-                                "absoluteDirection": "NORTHWEST",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": false,
-                                "lon": -7.6040428,
-                                "lat": 33.5902283,
-                                "elevation": []
-                            },
-                            {
-                                "distance": 46.512,
-                                "relativeDirection": "LEFT",
-                                "streetName": "Rue Aarroussi Mohammed",
-                                "absoluteDirection": "SOUTHWEST",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": false,
-                                "lon": -7.6052675,
-                                "lat": 33.590936500000005,
-                                "elevation": []
-                            }
-                        ]
-                    }
-                ],
-                "tooSloped": false
-            },
-            {
-                "duration": 1649,
-                "startTime": 1533806911000,
-                "endTime": 1533808560000,
-                "walkTime": 532,
-                "transitTime": 315,
-                "waitingTime": 802,
-                "walkDistance": 644.7957969838078,
-                "walkLimitExceeded": false,
-                "elevationLost": 0,
-                "elevationGained": 0,
-                "transfers": 0,
-                "fare": {
-                    "fare": {
-                        "regular": {
-                            "currency": {
-                                "currency": "MAD",
-                                "defaultFractionDigits": 2,
-                                "currencyCode": "MAD",
-                                "symbol": "MAD"
-                            },
-                            "cents": 450
-                        }
-                    },
-                    "details": {
-                        "regular": [
-                            {
-                                "fareId": "1:BUS2",
-                                "price": {
-                                    "currency": {
-                                        "currency": "MAD",
-                                        "defaultFractionDigits": 2,
-                                        "currencyCode": "MAD",
-                                        "symbol": "MAD"
-                                    },
-                                    "cents": 450
-                                },
-                                "routes": [
-                                    "1:R1"
-                                ]
-                            }
-                        ]
-                    }
-                },
-                "legs": [
-                    {
-                        "startTime": 1533806911000,
-                        "endTime": 1533807072000,
-                        "departureDelay": 0,
-                        "arrivalDelay": 0,
-                        "realTime": false,
-                        "distance": 187.806,
-                        "pathway": false,
-                        "mode": "WALK",
-                        "route": "",
-                        "agencyTimeZoneOffset": 3600000,
-                        "interlineWithPreviousLeg": false,
-                        "from": {
-                            "name": "Origin",
-                            "lon": -7.59333,
-                            "lat": 33.58981,
-                            "departure": 1533806911000,
-                            "orig": "",
-                            "vertexType": "NORMAL"
-                        },
-                        "to": {
-                            "name": "Casa Voyageurs",
-                            "stopId": "1:S17",
-                            "lon": -7.5919484,
-                            "lat": 33.5903581,
-                            "arrival": 1533807072000,
-                            "departure": 1533807873000,
-                            "stopIndex": 16,
-                            "stopSequence": 17,
-                            "vertexType": "TRANSIT"
-                        },
-                        "legGeometry": {
-                            "points": "mo_lElajm@CGKKBeAMGOAK@i@MSEEAECKGJYh@uAFO??",
-                            "length": 16
-                        },
-                        "rentedBike": false,
-                        "transitLeg": false,
-                        "duration": 161,
-                        "intermediateStops": [],
-                        "steps": [
-                            {
-                                "distance": 12.68,
-                                "relativeDirection": "DEPART",
-                                "streetName": "Boulevard d'Oujda",
-                                "absoluteDirection": "NORTHEAST",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": false,
-                                "lon": -7.593344896578051,
-                                "lat": 33.58983864697046,
-                                "elevation": []
-                            },
-                            {
-                                "distance": 32.058,
-                                "relativeDirection": "RIGHT",
-                                "streetName": "Boulevard Abdellah Ben Yassine",
-                                "absoluteDirection": "EAST",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": false,
-                                "lon": -7.5932417,
-                                "lat": 33.589910700000004,
-                                "elevation": []
-                            },
-                            {
-                                "distance": 143.068,
-                                "relativeDirection": "LEFT",
-                                "streetName": "road",
-                                "absoluteDirection": "NORTHEAST",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": true,
-                                "lon": -7.5928959,
-                                "lat": 33.589898600000005,
-                                "elevation": []
-                            }
-                        ]
-                    },
-                    {
-                        "startTime": 1533807873000,
-                        "endTime": 1533808188000,
-                        "departureDelay": 0,
-                        "arrivalDelay": 0,
-                        "realTime": false,
-                        "distance": 1550.0386053488442,
-                        "pathway": false,
-                        "mode": "TRAM",
-                        "route": "T1",
-                        "agencyName": "Casa Tramway",
-                        "agencyUrl": "http://www.casatramway.ma",
-                        "agencyTimeZoneOffset": 3600000,
-                        "routeColor": "00FFFF",
-                        "routeType": 0,
-                        "routeId": "1:R1",
-                        "routeTextColor": "FFD700",
-                        "interlineWithPreviousLeg": false,
-                        "tripShortName": "T1 05:45 to Facultés Terminus",
-                        "headsign": "Facultés Terminus",
-                        "agencyId": "A1",
-                        "tripId": "1:R1001",
-                        "serviceDate": "20180809",
-                        "from": {
-                            "name": "Casa Voyageurs",
-                            "stopId": "1:S17",
-                            "lon": -7.5919484,
-                            "lat": 33.5903581,
-                            "arrival": 1533807072000,
-                            "departure": 1533807873000,
-                            "stopIndex": 16,
-                            "stopSequence": 17,
-                            "vertexType": "TRANSIT"
-                        },
-                        "to": {
-                            "name": "Mohamed Diouri",
-                            "stopId": "1:S20",
-                            "lon": -7.6077746,
-                            "lat": 33.5937216,
-                            "arrival": 1533808188000,
-                            "departure": 1533808189000,
-                            "stopIndex": 19,
-                            "stopSequence": 20,
-                            "vertexType": "TRANSIT"
-                        },
-                        "legGeometry": {
-                            "points": "ur_lEtxim@}Nf^gArCc@fa@w@x[",
-                            "length": 5
-                        },
-                        "routeShortName": "T1",
-                        "routeLongName": "T1: Sidi Moumen-to-Facultés",
-                        "rentedBike": false,
-                        "transitLeg": true,
-                        "duration": 315,
-                        "intermediateStops": [
-                            {
-                                "name": "Place Al Yassir",
-                                "stopId": "1:S18",
-                                "lon": -7.596949499999999,
-                                "lat": 33.5929091,
-                                "arrival": 1533807978000,
-                                "departure": 1533807978000,
-                                "stopIndex": 17,
-                                "stopSequence": 18,
-                                "vertexType": "TRANSIT"
-                            },
-                            {
-                                "name": "La Résistance",
-                                "stopId": "1:S19",
-                                "lon": -7.6031621,
-                                "lat": 33.5934485,
-                                "arrival": 1533808083000,
-                                "departure": 1533808083000,
-                                "stopIndex": 18,
-                                "stopSequence": 19,
-                                "vertexType": "TRANSIT"
-                            }
-                        ],
-                        "steps": []
-                    },
-                    {
-                        "startTime": 1533808189000,
-                        "endTime": 1533808560000,
-                        "departureDelay": 0,
-                        "arrivalDelay": 0,
-                        "realTime": false,
-                        "distance": 456.721,
-                        "pathway": false,
-                        "mode": "WALK",
-                        "route": "",
-                        "agencyTimeZoneOffset": 3600000,
-                        "interlineWithPreviousLeg": false,
-                        "from": {
-                            "name": "Mohamed Diouri",
-                            "stopId": "1:S20",
-                            "lon": -7.6077746,
-                            "lat": 33.5937216,
-                            "arrival": 1533808188000,
-                            "departure": 1533808189000,
-                            "stopIndex": 19,
-                            "stopSequence": 20,
-                            "vertexType": "TRANSIT"
-                        },
-                        "to": {
-                            "name": "Destination",
-                            "lon": -7.6057,
-                            "lat": 33.59072,
-                            "arrival": 1533808560000,
-                            "orig": "",
-                            "vertexType": "NORMAL"
-                        },
-                        "legGeometry": {
-                            "points": "sf`lEd}lm@DEbEeENQACAEAC?E?E?E@E@C@E@CBA@C@ABABA@ABAB?B?D?B@B@B@B@@BBB@BHKbAkAfB}Bz@cAb@zA",
-                            "length": 36
-                        },
-                        "rentedBike": false,
-                        "transitLeg": false,
-                        "duration": 371,
-                        "intermediateStops": [],
-                        "steps": [
-                            {
-                                "distance": 158.799,
-                                "relativeDirection": "DEPART",
-                                "streetName": "road",
-                                "absoluteDirection": "SOUTHEAST",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": true,
-                                "lon": -7.608025220595388,
-                                "lat": 33.59354596716427,
-                                "elevation": []
-                            },
-                            {
-                                "distance": 64.404,
-                                "relativeDirection": "CIRCLE_CLOCKWISE",
-                                "streetName": "road",
-                                "absoluteDirection": "EAST",
-                                "exit": "4",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": true,
-                                "lon": -7.6069192,
-                                "lat": 33.5924548,
-                                "elevation": []
-                            },
-                            {
-                                "distance": 187.006,
-                                "relativeDirection": "LEFT",
-                                "streetName": "Rue Magellan",
-                                "absoluteDirection": "SOUTHEAST",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": false,
-                                "lon": -7.606674900000001,
-                                "lat": 33.592142100000004,
-                                "elevation": []
-                            },
-                            {
-                                "distance": 46.512,
-                                "relativeDirection": "RIGHT",
-                                "streetName": "Rue Aarroussi Mohammed",
-                                "absoluteDirection": "SOUTHWEST",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": false,
-                                "lon": -7.6052675,
-                                "lat": 33.590936500000005,
-                                "elevation": []
-                            }
-                        ]
-                    }
-                ],
-                "tooSloped": false
-            },
-            {
-                "duration": 2577,
-                "startTime": 1533806911000,
-                "endTime": 1533809488000,
-                "walkTime": 441,
-                "transitTime": 334,
-                "waitingTime": 1802,
-                "walkDistance": 551.5925112732098,
-                "walkLimitExceeded": false,
-                "elevationLost": 0,
-                "elevationGained": 0,
-                "transfers": 1,
-                "fare": {
-                    "fare": {
-                        "regular": {
-                            "currency": {
-                                "currency": "MAD",
-                                "defaultFractionDigits": 2,
-                                "currencyCode": "MAD",
-                                "symbol": "MAD"
-                            },
-                            "cents": 800
-                        }
-                    },
-                    "details": {
-                        "regular": [
-                            {
-                                "fareId": "1:BUS1",
-                                "price": {
-                                    "currency": {
-                                        "currency": "MAD",
-                                        "defaultFractionDigits": 2,
-                                        "currencyCode": "MAD",
-                                        "symbol": "MAD"
-                                    },
-                                    "cents": 400
-                                },
-                                "routes": [
-                                    "1:R23"
-                                ]
-                            },
-                            {
-                                "fareId": "1:BUS1",
-                                "price": {
-                                    "currency": {
-                                        "currency": "MAD",
-                                        "defaultFractionDigits": 2,
-                                        "currencyCode": "MAD",
-                                        "symbol": "MAD"
-                                    },
-                                    "cents": 400
-                                },
-                                "routes": [
-                                    "1:R82"
-                                ]
-                            }
-                        ]
-                    }
-                },
-                "legs": [
-                    {
-                        "startTime": 1533806911000,
-                        "endTime": 1533807008000,
-                        "departureDelay": 0,
-                        "arrivalDelay": 0,
-                        "realTime": false,
-                        "distance": 124.623,
-                        "pathway": false,
-                        "mode": "WALK",
-                        "route": "",
-                        "agencyTimeZoneOffset": 3600000,
-                        "interlineWithPreviousLeg": false,
-                        "from": {
-                            "name": "Origin",
-                            "lon": -7.59333,
-                            "lat": 33.58981,
-                            "departure": 1533806911000,
-                            "orig": "",
-                            "vertexType": "NORMAL"
-                        },
-                        "to": {
-                            "name": "Casa Voyageurs",
-                            "stopId": "1:S268",
-                            "lon": -7.5925414,
-                            "lat": 33.5889711,
-                            "arrival": 1533807008000,
-                            "departure": 1533807909000,
-                            "stopIndex": 11,
-                            "stopSequence": 12,
-                            "vertexType": "TRANSIT"
-                        },
-                        "legGeometry": {
-                            "points": "mo_lElajm@CGnDwC",
-                            "length": 3
-                        },
-                        "rentedBike": false,
-                        "transitLeg": false,
-                        "duration": 97,
-                        "intermediateStops": [],
-                        "steps": [
-                            {
-                                "distance": 3.623,
-                                "relativeDirection": "DEPART",
-                                "streetName": "Boulevard d'Oujda",
-                                "absoluteDirection": "NORTHEAST",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": false,
-                                "lon": -7.593344896578051,
-                                "lat": 33.58983864697046,
-                                "elevation": []
-                            },
-                            {
-                                "distance": 121,
-                                "relativeDirection": "RIGHT",
-                                "streetName": "Rue Chatillon",
-                                "absoluteDirection": "SOUTHEAST",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": false,
-                                "lon": -7.5933090000000005,
-                                "lat": 33.5898516,
-                                "elevation": []
-                            }
-                        ]
-                    },
-                    {
-                        "startTime": 1533807909000,
-                        "endTime": 1533808119000,
-                        "departureDelay": 0,
-                        "arrivalDelay": 0,
-                        "realTime": false,
-                        "distance": 460.3464813940369,
-                        "pathway": false,
-                        "mode": "BUS",
-                        "route": "90",
-                        "agencyName": "M'dina Bus",
-                        "agencyUrl": "http://mdinabus.ma/",
-                        "agencyTimeZoneOffset": 3600000,
-                        "routeColor": "FA00FF",
-                        "routeType": 3,
-                        "routeId": "1:R23",
-                        "routeTextColor": "FF0000",
-                        "interlineWithPreviousLeg": false,
-                        "tripShortName": "90 05:30 to Bernoussi",
-                        "headsign": "Bernoussi",
-                        "agencyId": "A2",
-                        "tripId": "1:R23001",
-                        "serviceDate": "20180809",
-                        "from": {
-                            "name": "Casa Voyageurs",
-                            "stopId": "1:S268",
-                            "lon": -7.5925414,
-                            "lat": 33.5889711,
-                            "arrival": 1533807008000,
-                            "departure": 1533807909000,
-                            "stopIndex": 11,
-                            "stopSequence": 12,
-                            "vertexType": "TRANSIT"
-                        },
-                        "to": {
-                            "name": "Caserne Âin Borja",
-                            "stopId": "1:S267",
-                            "lon": -7.5911496,
-                            "lat": 33.586896,
-                            "arrival": 1533808119000,
-                            "departure": 1533808119000,
-                            "stopIndex": 13,
-                            "stopSequence": 14,
-                            "vertexType": "TRANSIT"
-                        },
-                        "legGeometry": {
-                            "points": "cj_lEn|im@fGpGb@d@jAhAr@yS",
-                            "length": 5
-                        },
-                        "routeShortName": "90",
-                        "routeLongName": "Ligne 90: Station M'dina Bus 2 - Bernoussi",
-                        "rentedBike": false,
-                        "transitLeg": true,
-                        "duration": 210,
-                        "intermediateStops": [
-                            {
-                                "name": "OFPPT Bahmad",
-                                "stopId": "1:S971",
-                                "lon": -7.5938893,
-                                "lat": 33.587644299999994,
-                                "arrival": 1533808014000,
-                                "departure": 1533808014000,
-                                "stopIndex": 12,
-                                "stopSequence": 13,
-                                "vertexType": "TRANSIT"
-                            }
-                        ],
-                        "steps": []
-                    },
-                    {
-                        "startTime": 1533808119000,
-                        "endTime": 1533808212000,
-                        "departureDelay": 0,
-                        "arrivalDelay": 0,
-                        "realTime": false,
-                        "distance": 120.662,
-                        "pathway": false,
-                        "mode": "WALK",
-                        "route": "",
-                        "agencyTimeZoneOffset": 3600000,
-                        "interlineWithPreviousLeg": false,
-                        "from": {
-                            "name": "Caserne Âin Borja",
-                            "stopId": "1:S267",
-                            "lon": -7.5911496,
-                            "lat": 33.586896,
-                            "arrival": 1533808119000,
-                            "departure": 1533808119000,
-                            "stopIndex": 13,
-                            "stopSequence": 14,
-                            "vertexType": "TRANSIT"
-                        },
-                        "to": {
-                            "name": "Caserne Âin Borja",
-                            "stopId": "1:S266",
-                            "lon": -7.5911737000000015,
-                            "lat": 33.586778,
-                            "arrival": 1533808212000,
-                            "departure": 1533809112000,
-                            "stopIndex": 19,
-                            "stopSequence": 20,
-                            "vertexType": "TRANSIT"
-                        },
-                        "legGeometry": {
-                            "points": "a}~kEtsim@HiB@BBBB?B@BABA@C@CKpB",
-                            "length": 11
-                        },
-                        "rentedBike": false,
-                        "transitLeg": false,
-                        "duration": 93,
-                        "intermediateStops": [],
-                        "steps": [
-                            {
-                                "distance": 120.662,
-                                "relativeDirection": "DEPART",
-                                "streetName": "Boulevard Youssef Ibn Tachfine",
-                                "absoluteDirection": "EAST",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": false,
-                                "lon": -7.5911496000000005,
-                                "lat": 33.586896,
-                                "elevation": []
-                            }
-                        ]
-                    },
-                    {
-                        "startTime": 1533809112000,
-                        "endTime": 1533809236000,
-                        "departureDelay": 0,
-                        "arrivalDelay": 0,
-                        "realTime": false,
-                        "distance": 1163.1667044261662,
-                        "pathway": false,
-                        "mode": "GTAXI",
-                        "route": "43",
-                        "agencyName": "M'dina Bus",
-                        "agencyUrl": "http://mdinabus.ma/",
-                        "agencyTimeZoneOffset": 3600000,
-                        "routeColor": "FA00FF",
-                        "routeType": 3,
-                        "routeId": "1:R82",
-                        "routeTextColor": "FF0000",
-                        "interlineWithPreviousLeg": false,
-                        "tripShortName": "43 05:30 to Hôpital Sofi",
-                        "headsign": "Hôpital Sofi",
-                        "agencyId": "A2",
-                        "tripId": "1:R82001",
-                        "serviceDate": "20180809",
-                        "from": {
-                            "name": "Caserne Âin Borja",
-                            "stopId": "1:S266",
-                            "lon": -7.5911737000000015,
-                            "lat": 33.586778,
-                            "arrival": 1533808212000,
-                            "departure": 1533809112000,
-                            "stopIndex": 19,
-                            "stopSequence": 20,
-                            "vertexType": "TRANSIT"
-                        },
-                        "to": {
-                            "name": "Dar Lmoamin",
-                            "stopId": "1:S665",
-                            "lon": -7.6031676999999975,
-                            "lat": 33.58987570000001,
-                            "arrival": 1533809236000,
-                            "departure": 1533809237000,
-                            "stopIndex": 20,
-                            "stopSequence": 21,
-                            "vertexType": "TRANSIT"
-                        },
-                        "legGeometry": {
-                            "points": "q|~kExsim@qAp]mE|WaH~PYt@",
-                            "length": 5
-                        },
-                        "routeShortName": "43",
-                        "routeLongName": "Ligne 43: Doha - Hôpital Sofi",
-                        "rentedBike": false,
-                        "transitLeg": true,
-                        "duration": 124,
-                        "intermediateStops": [],
-                        "steps": []
-                    },
-                    {
-                        "startTime": 1533809237000,
-                        "endTime": 1533809488000,
-                        "departureDelay": 0,
-                        "arrivalDelay": 0,
-                        "realTime": false,
-                        "distance": 306.153,
-                        "pathway": false,
-                        "mode": "WALK",
-                        "route": "",
-                        "agencyTimeZoneOffset": 3600000,
-                        "interlineWithPreviousLeg": false,
-                        "from": {
-                            "name": "Dar Lmoamin",
-                            "stopId": "1:S665",
-                            "lon": -7.6031676999999975,
-                            "lat": 33.58987570000001,
-                            "arrival": 1533809236000,
-                            "departure": 1533809237000,
-                            "stopIndex": 20,
-                            "stopSequence": 21,
-                            "vertexType": "TRANSIT"
-                        },
-                        "to": {
-                            "name": "Destination",
-                            "lon": -7.6057,
-                            "lat": 33.59072,
-                            "arrival": 1533809488000,
-                            "orig": "",
-                            "vertexType": "NORMAL"
-                        },
-                        "legGeometry": {
-                            "points": "uo_lEx~km@Wn@KRCAC?CAE?C?C@C?C@C@CBC@CBABABCDCDAF?B?D?B?D?D@B?D@BBD@BBB@BBBDBB@MPAH_AhC}@lAb@zA",
-                            "length": 40
-                        },
-                        "rentedBike": false,
-                        "transitLeg": false,
-                        "duration": 251,
-                        "intermediateStops": [],
-                        "steps": [
-                            {
-                                "distance": 37.003,
-                                "relativeDirection": "DEPART",
-                                "streetName": "Boulevard Youssef Ibn Tachfine",
-                                "absoluteDirection": "NORTHWEST",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": false,
-                                "lon": -7.6031677,
-                                "lat": 33.5898757,
-                                "elevation": []
-                            },
-                            {
-                                "distance": 83.499,
-                                "relativeDirection": "CIRCLE_COUNTERCLOCKWISE",
-                                "streetName": "road",
-                                "absoluteDirection": "NORTH",
-                                "exit": "5",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": false,
-                                "lon": -7.6035072,
-                                "lat": 33.590051100000004,
-                                "elevation": []
-                            },
-                            {
-                                "distance": 139.139,
-                                "relativeDirection": "RIGHT",
-                                "streetName": "Rue Magellan",
-                                "absoluteDirection": "NORTHWEST",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": false,
-                                "lon": -7.6040428,
-                                "lat": 33.5902283,
-                                "elevation": []
-                            },
-                            {
-                                "distance": 46.512,
-                                "relativeDirection": "LEFT",
-                                "streetName": "Rue Aarroussi Mohammed",
-                                "absoluteDirection": "SOUTHWEST",
-                                "stayOn": false,
-                                "area": false,
-                                "bogusName": false,
-                                "lon": -7.6052675,
-                                "lat": 33.590936500000005,
-                                "elevation": []
-                            }
-                        ]
-                    }
-                ],
-                "tooSloped": false
-            },
-            {
-                "duration": 4475,
-                "startTime": 1533806911000,
-                "endTime": 1533811386000,
-                "walkTime": 0,
-                "transitTime": 0,
-                "waitingTime": 0,
-                "walkDistance": 0,
-                "walkLimitExceeded": false,
-                "elevationLost": 0,
-                "elevationGained": 0,
-                "transfers": 2,
-                "fare": {
-                    "fare": {
-                        "regular": {
-                            "currency": {
-                                "currency": "MAD",
-                                "defaultFractionDigits": 2,
-                                "currencyCode": "MAD",
-                                "symbol": "MAD"
-                            },
-                            "cents": 7000
-                        }
-                    }
-                },
-                "legs": [
-                    {
-                        "startTime": 1533806911000,
-                        "endTime": 1533811386000,
-                        "departureDelay": 0,
-                        "arrivalDelay": 0,
-                        "realTime": false,
-                        "distance": 1898.7871550003154,
-                        "pathway": false,
-                        "mode": "TAXI",
-                        "route": "2",
-                        "agencyName": "M'dina Bus",
-                        "agencyUrl": "http://mdinabus.ma/",
-                        "agencyTimeZoneOffset": 3600000,
-                        "routeColor": "FA00FF",
-                        "routeType": 3,
-                        "routeId": "1:R115",
-                        "routeTextColor": "FF0000",
-                        "interlineWithPreviousLeg": false,
-                        "tripShortName": "2 15:45 to Noor City",
-                        "headsign": "Noor City",
-                        "agencyId": "A2",
-                        "tripId": "1:R115001",
-                        "serviceDate": "20180809",
-                        "from": {
-                            "name": "Casa Voyageurs",
-                            "stopId": "1:S773",
-                            "lon": -7.5919812,
-                            "lat": 33.5903184,
-                            "arrival": 1533807071000,
-                            "departure": 1533808272000,
-                            "stopIndex": 6,
-                            "stopSequence": 7,
-                            "vertexType": "TRANSIT"
-                        },
-                        "to": {
-                            "name": "BATA",
-                            "stopId": "1:S1001",
-                            "lon": -7.577560000000001,
-                            "lat": 33.585246999999995,
-                            "arrival": 1533808912000,
-                            "departure": 1533809812000,
-                            "stopIndex": 11,
-                            "stopSequence": 12,
-                            "vertexType": "TRANSIT"
-                        },
-                        "legGeometry": {
-                            "points": "sp_lEv_jm@^d@^]fCwBnGxGb@b@bAP`@_R@w@fAw[@Q`Ew\\?GnA}H]{L",
-                            "length": 15
-                        },
-                        "routeShortName": "2",
-                        "routeLongName": "Ligne 2: Place Concorde - Noor City",
-                        "rentedBike": false,
-                        "transitLeg": true,
-                        "duration": 640,
-                        "intermediateStops": [
-                            {
-                                "name": "OFPPT Bahmad",
-                                "stopId": "1:S971",
-                                "lon": -7.5938893,
-                                "lat": 33.587644299999994,
-                                "arrival": 1533808400000,
-                                "departure": 1533808400000,
-                                "stopIndex": 7,
-                                "stopSequence": 8,
-                                "vertexType": "TRANSIT"
-                            },
-                            {
-                                "name": "Caserne Âin Borja",
-                                "stopId": "1:S266",
-                                "lon": -7.5911737000000015,
-                                "lat": 33.586778,
-                                "arrival": 1533808528000,
-                                "departure": 1533808528000,
-                                "stopIndex": 8,
-                                "stopSequence": 9,
-                                "vertexType": "TRANSIT"
-                            },
-                            {
-                                "name": "École Le Nid",
-                                "stopId": "1:S945",
-                                "lon": -7.5862815,
-                                "lat": 33.586552399999995,
-                                "arrival": 1533808656000,
-                                "departure": 1533808656000,
-                                "stopIndex": 9,
-                                "stopSequence": 10,
-                                "vertexType": "TRANSIT"
-                            },
-                            {
-                                "name": "Res.assalam",
-                                "stopId": "1:S1000",
-                                "lon": -7.581519,
-                                "lat": 33.585291999999995,
-                                "arrival": 1533808784000,
-                                "departure": 1533808784000,
-                                "stopIndex": 10,
-                                "stopSequence": 11,
-                                "vertexType": "TRANSIT"
-                            }
-                        ],
-                        "steps": []
-                    }
-				]
-}
-        ]
+    "to": {
+      "name": "Destination",
+      "lon": -7.621104241989088,
+      "lat": 33.59162397875197,
+      "orig": "",
+      "vertexType": "NORMAL"
     },
-    "debugOutput": {
-        "precalculationTime": 16,
-        "pathCalculationTime": 11,
-        "pathTimes": [
-            2,
-            2,
-            1,
-            2,
-            2,
-            2
+    "itineraries": [
+      {
+        "duration": 2039,
+        "startTime": 1553707137000,
+        "endTime": 1553709176000,
+        "walkTime": 721,
+        "transitTime": 316,
+        "waitingTime": 1002,
+        "walkDistance": 890.2373007431578,
+        "walkLimitExceeded": false,
+        "elevationLost": 0,
+        "elevationGained": 0,
+        "transfers": 1,
+        "fare": {
+          "fare": {
+            "regular": {
+              "currency": {
+                "currency": "MAD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "MAD",
+                "symbol": "MAD"
+              },
+              "cents": 1000
+            }
+          },
+          "details": {
+            "regular": [
+              {
+                "fareId": "1:BUS1",
+                "price": {
+                  "currency": {
+                    "currency": "MAD",
+                    "defaultFractionDigits": 2,
+                    "currencyCode": "MAD",
+                    "symbol": "MAD"
+                  },
+                  "cents": 400
+                },
+                "routes": [
+                  "1:R88"
+                ]
+              },
+              {
+                "fareId": "1:GTAXI1",
+                "price": {
+                  "currency": {
+                    "currency": "MAD",
+                    "defaultFractionDigits": 2,
+                    "currencyCode": "MAD",
+                    "symbol": "MAD"
+                  },
+                  "cents": 600
+                },
+                "routes": [
+                  "1:R4"
+                ]
+              }
+            ]
+          }
+        },
+        "legs": [
+          {
+            "startTime": 1553707137000,
+            "endTime": 1553707498000,
+            "departureDelay": 0,
+            "arrivalDelay": 0,
+            "realTime": false,
+            "distance": 434.256,
+            "pathway": false,
+            "mode": "WALK",
+            "route": "",
+            "agencyTimeZoneOffset": 0,
+            "interlineWithPreviousLeg": false,
+            "from": {
+              "name": "Origin",
+              "lon": -7.637300491333009,
+              "lat": 33.58821963230516,
+              "departure": 1553707137000,
+              "orig": "",
+              "vertexType": "NORMAL"
+            },
+            "to": {
+              "name": "Angle Anfa/Zerktouni",
+              "stopId": "1:S198",
+              "lon": -7.636147500000001,
+              "lat": 33.5912539,
+              "arrival": 1553707498000,
+              "departure": 1553708399000,
+              "stopIndex": 6,
+              "stopSequence": 7,
+              "vertexType": "TRANSIT"
+            },
+            "legGeometry": {
+              "points": "qe_lEjtrm@MSyApAc@}@s@yAs@{A[PqCq@EAoA_@GAAB?BABABCBCBCBC@E@C?E?CACACACACCCEACAEAESL",
+              "length": 32
+            },
+            "rentedBike": false,
+            "transitLeg": false,
+            "duration": 361,
+            "intermediateStops": [],
+            "steps": [
+              {
+                "distance": 12.256,
+                "relativeDirection": "DEPART",
+                "streetName": "Rue el Mansour Saâdi",
+                "absoluteDirection": "NORTHEAST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.637332472334378,
+                "lat": 33.58825216612041,
+                "elevation": []
+              },
+              {
+                "distance": 63.317,
+                "relativeDirection": "LEFT",
+                "streetName": "Place du Nid d'Iris",
+                "absoluteDirection": "NORTHWEST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.637230100000001,
+                "lat": 33.588322000000005,
+                "elevation": []
+              },
+              {
+                "distance": 137.184,
+                "relativeDirection": "RIGHT",
+                "streetName": "Rue Assilm",
+                "absoluteDirection": "NORTHEAST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.6376403,
+                "lat": 33.5887775,
+                "elevation": []
+              },
+              {
+                "distance": 156.789,
+                "relativeDirection": "LEFT",
+                "streetName": "road",
+                "absoluteDirection": "NORTHWEST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": true,
+                "lon": -7.6364220000000005,
+                "lat": 33.589479000000004,
+                "elevation": []
+              },
+              {
+                "distance": 51.916,
+                "relativeDirection": "CIRCLE_CLOCKWISE",
+                "streetName": "Boulevard d'Anfa",
+                "absoluteDirection": "NORTHWEST",
+                "exit": "4",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.6360859,
+                "lat": 33.5908141,
+                "elevation": []
+              },
+              {
+                "distance": 12.794,
+                "relativeDirection": "LEFT",
+                "streetName": "Boulevard Mohamed Zerktouni",
+                "absoluteDirection": "NORTHWEST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.6360796,
+                "lat": 33.5911537,
+                "elevation": []
+              }
+            ]
+          },
+          {
+            "startTime": 1553708399000,
+            "endTime": 1553708623000,
+            "departureDelay": 0,
+            "arrivalDelay": 0,
+            "realTime": false,
+            "distance": 1544.028902422607,
+            "pathway": false,
+            "mode": "BUS",
+            "route": "38",
+            "agencyName": "M'dina Bus",
+            "agencyUrl": "http://mdinabus.ma/",
+            "agencyTimeZoneOffset": 0,
+            "routeColor": "FA00FF",
+            "routeType": 3,
+            "routeId": "1:R88",
+            "routeTextColor": "FF0000",
+            "interlineWithPreviousLeg": false,
+            "tripShortName": "38 05:30 to Hay El Falah",
+            "headsign": "Hay El Falah",
+            "agencyId": "A2",
+            "tripId": "1:R88001",
+            "serviceDate": "20190327",
+            "from": {
+              "name": "Angle Anfa/Zerktouni",
+              "stopId": "1:S198",
+              "lon": -7.636147500000001,
+              "lat": 33.5912539,
+              "arrival": 1553707498000,
+              "departure": 1553708399000,
+              "stopIndex": 6,
+              "stopSequence": 7,
+              "vertexType": "TRANSIT"
+            },
+            "to": {
+              "name": "CIMR",
+              "stopId": "1:S586",
+              "lon": -7.624336099999999,
+              "lat": 33.5815475,
+              "arrival": 1553708623000,
+              "departure": 1553708623000,
+              "stopIndex": 8,
+              "stopSequence": 9,
+              "vertexType": "TRANSIT"
+            },
+            "legGeometry": {
+              "points": "gx_lE`mrm@tAgAlS}R`@_@nAoBxLeV~CgHlBsSzJbD",
+              "length": 9
+            },
+            "routeShortName": "38",
+            "routeLongName": "Ligne 38: El Hank - Hay El Falah",
+            "rentedBike": false,
+            "transitLeg": true,
+            "duration": 224,
+            "intermediateStops": [
+              {
+                "name": "Twin",
+                "stopId": "1:S195",
+                "lon": -7.632671,
+                "lat": 33.5875084,
+                "arrival": 1553708511000,
+                "departure": 1553708511000,
+                "stopIndex": 7,
+                "stopSequence": 8,
+                "vertexType": "TRANSIT"
+              }
+            ],
+            "steps": []
+          },
+          {
+            "startTime": 1553708623000,
+            "endTime": 1553708711000,
+            "departureDelay": 0,
+            "arrivalDelay": 0,
+            "realTime": false,
+            "distance": 113.20400000000001,
+            "pathway": false,
+            "mode": "WALK",
+            "route": "",
+            "agencyTimeZoneOffset": 0,
+            "interlineWithPreviousLeg": false,
+            "from": {
+              "name": "CIMR",
+              "stopId": "1:S586",
+              "lon": -7.624336099999999,
+              "lat": 33.5815475,
+              "arrival": 1553708623000,
+              "departure": 1553708623000,
+              "stopIndex": 8,
+              "stopSequence": 9,
+              "vertexType": "TRANSIT"
+            },
+            "to": {
+              "name": "Hassan II",
+              "stopId": "1:S24",
+              "lon": -7.6239054,
+              "lat": 33.5824994,
+              "arrival": 1553708711000,
+              "departure": 1553708811000,
+              "stopIndex": 16,
+              "stopSequence": 17,
+              "vertexType": "TRANSIT"
+            },
+            "legGeometry": {
+              "points": "s{}kEbcpm@eCu@WMa@O",
+              "length": 4
+            },
+            "rentedBike": false,
+            "transitLeg": false,
+            "duration": 88,
+            "intermediateStops": [],
+            "steps": [
+              {
+                "distance": 113.20400000000001,
+                "relativeDirection": "DEPART",
+                "streetName": "Boulevard Abdelmoumen",
+                "absoluteDirection": "NORTH",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.624336100000001,
+                "lat": 33.5815475,
+                "elevation": []
+              }
+            ]
+          },
+          {
+            "startTime": 1553708811000,
+            "endTime": 1553708903000,
+            "departureDelay": 0,
+            "arrivalDelay": 0,
+            "realTime": false,
+            "distance": 872.499095145715,
+            "pathway": false,
+            "mode": "TRAM",
+            "route": "T1",
+            "agencyName": "Casa Tramway",
+            "agencyUrl": "http://www.casatramway.ma",
+            "agencyTimeZoneOffset": 0,
+            "routeColor": "00FFFF",
+            "routeType": 0,
+            "routeId": "1:R4",
+            "routeTextColor": "FFD700",
+            "interlineWithPreviousLeg": false,
+            "tripShortName": "T1 05:45 to Sidi Moumen Terminus",
+            "headsign": "Sidi Moumen Terminus",
+            "agencyId": "A1",
+            "tripId": "1:R4001",
+            "serviceDate": "20190327",
+            "from": {
+              "name": "Hassan II",
+              "stopId": "1:S24",
+              "lon": -7.6239054,
+              "lat": 33.5824994,
+              "arrival": 1553708711000,
+              "departure": 1553708811000,
+              "stopIndex": 16,
+              "stopSequence": 17,
+              "vertexType": "TRANSIT"
+            },
+            "to": {
+              "name": "Place Mohammed V",
+              "stopId": "1:S23",
+              "lon": -7.6200110999999975,
+              "lat": 33.5896439,
+              "arrival": 1553708903000,
+              "departure": 1553708904000,
+              "stopIndex": 17,
+              "stopSequence": 18,
+              "vertexType": "TRANSIT"
+            },
+            "legGeometry": {
+              "points": "qa~kEl`pm@yGkC{b@}R",
+              "length": 3
+            },
+            "routeShortName": "T1",
+            "routeLongName": "T1 : Ain Diab - Sidi Moumen",
+            "rentedBike": false,
+            "transitLeg": true,
+            "duration": 92,
+            "intermediateStops": [],
+            "steps": []
+          },
+          {
+            "startTime": 1553708904000,
+            "endTime": 1553709176000,
+            "departureDelay": 0,
+            "arrivalDelay": 0,
+            "realTime": false,
+            "distance": 342.507,
+            "pathway": false,
+            "mode": "WALK",
+            "route": "",
+            "agencyTimeZoneOffset": 0,
+            "interlineWithPreviousLeg": false,
+            "from": {
+              "name": "Place Mohammed V",
+              "stopId": "1:S23",
+              "lon": -7.6200110999999975,
+              "lat": 33.5896439,
+              "arrival": 1553708903000,
+              "departure": 1553708904000,
+              "stopIndex": 17,
+              "stopSequence": 18,
+              "vertexType": "TRANSIT"
+            },
+            "to": {
+              "name": "Destination",
+              "lon": -7.621104241989088,
+              "lat": 33.59162397875197,
+              "arrival": 1553709176000,
+              "orig": "",
+              "vertexType": "NORMAL"
+            },
+            "legGeometry": {
+              "points": "in_lEhhom@i@W_@QKGQIOIICSKiA_@OGQEKEKl@I`@SHe@tBm@jC",
+              "length": 17
+            },
+            "rentedBike": false,
+            "transitLeg": false,
+            "duration": 272,
+            "intermediateStops": [],
+            "steps": [
+              {
+                "distance": 162.578,
+                "relativeDirection": "DEPART",
+                "streetName": "Avenue Hassan II",
+                "absoluteDirection": "NORTHEAST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.620049093808682,
+                "lat": 33.58965982622759,
+                "elevation": []
+              },
+              {
+                "distance": 179.929,
+                "relativeDirection": "LEFT",
+                "streetName": "road",
+                "absoluteDirection": "WEST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": true,
+                "lon": -7.6193568,
+                "lat": 33.591001,
+                "elevation": []
+              }
+            ]
+          }
         ],
-        "renderingTime": 3,
-        "totalTime": 30,
-        "timedOut": false
-    },
-    "elevationMetadata": {
-        "ellipsoidToGeoidDifference": 46.13932641729835,
-        "geoidElevation": false
-    }
+        "tooSloped": false
+      },
+      {
+        "duration": 2076,
+        "startTime": 1553707137000,
+        "endTime": 1553709213000,
+        "walkTime": 721,
+        "transitTime": 353,
+        "waitingTime": 1002,
+        "walkDistance": 890.2373007431578,
+        "walkLimitExceeded": false,
+        "elevationLost": 0,
+        "elevationGained": 0,
+        "transfers": 1,
+        "fare": {
+          "fare": {
+            "regular": {
+              "currency": {
+                "currency": "MAD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "MAD",
+                "symbol": "MAD"
+              },
+              "cents": 1000
+            }
+          },
+          "details": {
+            "regular": [
+              {
+                "fareId": "1:BUS1",
+                "price": {
+                  "currency": {
+                    "currency": "MAD",
+                    "defaultFractionDigits": 2,
+                    "currencyCode": "MAD",
+                    "symbol": "MAD"
+                  },
+                  "cents": 400
+                },
+                "routes": [
+                  "1:R50"
+                ]
+              },
+              {
+                "fareId": "1:GTAXI1",
+                "price": {
+                  "currency": {
+                    "currency": "MAD",
+                    "defaultFractionDigits": 2,
+                    "currencyCode": "MAD",
+                    "symbol": "MAD"
+                  },
+                  "cents": 600
+                },
+                "routes": [
+                  "1:R3"
+                ]
+              }
+            ]
+          }
+        },
+        "legs": [
+          {
+            "startTime": 1553707137000,
+            "endTime": 1553707498000,
+            "departureDelay": 0,
+            "arrivalDelay": 0,
+            "realTime": false,
+            "distance": 434.256,
+            "pathway": false,
+            "mode": "WALK",
+            "route": "",
+            "agencyTimeZoneOffset": 0,
+            "interlineWithPreviousLeg": false,
+            "from": {
+              "name": "Origin",
+              "lon": -7.637300491333009,
+              "lat": 33.58821963230516,
+              "departure": 1553707137000,
+              "orig": "",
+              "vertexType": "NORMAL"
+            },
+            "to": {
+              "name": "Angle Anfa/Zerktouni",
+              "stopId": "1:S198",
+              "lon": -7.636147500000001,
+              "lat": 33.5912539,
+              "arrival": 1553707498000,
+              "departure": 1553708399000,
+              "stopIndex": 5,
+              "stopSequence": 6,
+              "vertexType": "TRANSIT"
+            },
+            "legGeometry": {
+              "points": "qe_lEjtrm@MSyApAc@}@s@yAs@{A[PqCq@EAoA_@GAAB?BABABCBCBCBC@E@C?E?CACACACACCCEACAEAESL",
+              "length": 32
+            },
+            "rentedBike": false,
+            "transitLeg": false,
+            "duration": 361,
+            "intermediateStops": [],
+            "steps": [
+              {
+                "distance": 12.256,
+                "relativeDirection": "DEPART",
+                "streetName": "Rue el Mansour Saâdi",
+                "absoluteDirection": "NORTHEAST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.637332472334378,
+                "lat": 33.58825216612041,
+                "elevation": []
+              },
+              {
+                "distance": 63.317,
+                "relativeDirection": "LEFT",
+                "streetName": "Place du Nid d'Iris",
+                "absoluteDirection": "NORTHWEST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.637230100000001,
+                "lat": 33.588322000000005,
+                "elevation": []
+              },
+              {
+                "distance": 137.184,
+                "relativeDirection": "RIGHT",
+                "streetName": "Rue Assilm",
+                "absoluteDirection": "NORTHEAST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.6376403,
+                "lat": 33.5887775,
+                "elevation": []
+              },
+              {
+                "distance": 156.789,
+                "relativeDirection": "LEFT",
+                "streetName": "road",
+                "absoluteDirection": "NORTHWEST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": true,
+                "lon": -7.6364220000000005,
+                "lat": 33.589479000000004,
+                "elevation": []
+              },
+              {
+                "distance": 51.916,
+                "relativeDirection": "CIRCLE_CLOCKWISE",
+                "streetName": "Boulevard d'Anfa",
+                "absoluteDirection": "NORTHWEST",
+                "exit": "4",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.6360859,
+                "lat": 33.5908141,
+                "elevation": []
+              },
+              {
+                "distance": 12.794,
+                "relativeDirection": "LEFT",
+                "streetName": "Boulevard Mohamed Zerktouni",
+                "absoluteDirection": "NORTHWEST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.6360796,
+                "lat": 33.5911537,
+                "elevation": []
+              }
+            ]
+          },
+          {
+            "startTime": 1553708399000,
+            "endTime": 1553708647000,
+            "departureDelay": 0,
+            "arrivalDelay": 0,
+            "realTime": false,
+            "distance": 1544.028902422607,
+            "pathway": false,
+            "mode": "BUS",
+            "route": "67",
+            "agencyName": "M'dina Bus",
+            "agencyUrl": "http://mdinabus.ma/",
+            "agencyTimeZoneOffset": 0,
+            "routeColor": "FA00FF",
+            "routeType": 3,
+            "routeId": "1:R50",
+            "routeTextColor": "FF0000",
+            "interlineWithPreviousLeg": false,
+            "tripShortName": "67 05:30 to Ouad Dahab",
+            "headsign": "Ouad Dahab",
+            "agencyId": "A2",
+            "tripId": "1:R50001",
+            "serviceDate": "20190327",
+            "from": {
+              "name": "Angle Anfa/Zerktouni",
+              "stopId": "1:S198",
+              "lon": -7.636147500000001,
+              "lat": 33.5912539,
+              "arrival": 1553707498000,
+              "departure": 1553708399000,
+              "stopIndex": 5,
+              "stopSequence": 6,
+              "vertexType": "TRANSIT"
+            },
+            "to": {
+              "name": "CIMR",
+              "stopId": "1:S586",
+              "lon": -7.624336099999999,
+              "lat": 33.5815475,
+              "arrival": 1553708647000,
+              "departure": 1553708647000,
+              "stopIndex": 7,
+              "stopSequence": 8,
+              "vertexType": "TRANSIT"
+            },
+            "legGeometry": {
+              "points": "ex_lEbmrm@jCiBpQaR\\]dJyPtDeHfCiFdC_UnJbD",
+              "length": 9
+            },
+            "routeShortName": "67",
+            "routeLongName": "Ligne 67: Hôpital Sofi - Ouad Dahab",
+            "rentedBike": false,
+            "transitLeg": true,
+            "duration": 248,
+            "intermediateStops": [
+              {
+                "name": "Twin",
+                "stopId": "1:S195",
+                "lon": -7.632671,
+                "lat": 33.5875084,
+                "arrival": 1553708523000,
+                "departure": 1553708523000,
+                "stopIndex": 6,
+                "stopSequence": 7,
+                "vertexType": "TRANSIT"
+              }
+            ],
+            "steps": []
+          },
+          {
+            "startTime": 1553708647000,
+            "endTime": 1553708735000,
+            "departureDelay": 0,
+            "arrivalDelay": 0,
+            "realTime": false,
+            "distance": 113.20400000000001,
+            "pathway": false,
+            "mode": "WALK",
+            "route": "",
+            "agencyTimeZoneOffset": 0,
+            "interlineWithPreviousLeg": false,
+            "from": {
+              "name": "CIMR",
+              "stopId": "1:S586",
+              "lon": -7.624336099999999,
+              "lat": 33.5815475,
+              "arrival": 1553708647000,
+              "departure": 1553708647000,
+              "stopIndex": 7,
+              "stopSequence": 8,
+              "vertexType": "TRANSIT"
+            },
+            "to": {
+              "name": "Hassan II",
+              "stopId": "1:S24",
+              "lon": -7.6239054,
+              "lat": 33.5824994,
+              "arrival": 1553708735000,
+              "departure": 1553708835000,
+              "stopIndex": 11,
+              "stopSequence": 12,
+              "vertexType": "TRANSIT"
+            },
+            "legGeometry": {
+              "points": "s{}kEbcpm@eCu@WMa@O",
+              "length": 4
+            },
+            "rentedBike": false,
+            "transitLeg": false,
+            "duration": 88,
+            "intermediateStops": [],
+            "steps": [
+              {
+                "distance": 113.20400000000001,
+                "relativeDirection": "DEPART",
+                "streetName": "Boulevard Abdelmoumen",
+                "absoluteDirection": "NORTH",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.624336100000001,
+                "lat": 33.5815475,
+                "elevation": []
+              }
+            ]
+          },
+          {
+            "startTime": 1553708835000,
+            "endTime": 1553708940000,
+            "departureDelay": 0,
+            "arrivalDelay": 0,
+            "realTime": false,
+            "distance": 872.499095145715,
+            "pathway": false,
+            "mode": "TRAM",
+            "route": "T1",
+            "agencyName": "Casa Tramway",
+            "agencyUrl": "http://www.casatramway.ma",
+            "agencyTimeZoneOffset": 0,
+            "routeColor": "00FFFF",
+            "routeType": 0,
+            "routeId": "1:R3",
+            "routeTextColor": "FFD700",
+            "interlineWithPreviousLeg": false,
+            "tripShortName": "T1 05:45 to Sidi Moumen Terminus",
+            "headsign": "Sidi Moumen Terminus",
+            "agencyId": "A1",
+            "tripId": "1:R3001",
+            "serviceDate": "20190327",
+            "from": {
+              "name": "Hassan II",
+              "stopId": "1:S24",
+              "lon": -7.6239054,
+              "lat": 33.5824994,
+              "arrival": 1553708735000,
+              "departure": 1553708835000,
+              "stopIndex": 11,
+              "stopSequence": 12,
+              "vertexType": "TRANSIT"
+            },
+            "to": {
+              "name": "Place Mohammed V",
+              "stopId": "1:S23",
+              "lon": -7.6200110999999975,
+              "lat": 33.5896439,
+              "arrival": 1553708940000,
+              "departure": 1553708941000,
+              "stopIndex": 12,
+              "stopSequence": 13,
+              "vertexType": "TRANSIT"
+            },
+            "legGeometry": {
+              "points": "qa~kEl`pm@sGcCac@eS",
+              "length": 3
+            },
+            "routeShortName": "T1",
+            "routeLongName": "T1 : Facultés - Sidi Moumen",
+            "rentedBike": false,
+            "transitLeg": true,
+            "duration": 105,
+            "intermediateStops": [],
+            "steps": []
+          },
+          {
+            "startTime": 1553708941000,
+            "endTime": 1553709213000,
+            "departureDelay": 0,
+            "arrivalDelay": 0,
+            "realTime": false,
+            "distance": 342.507,
+            "pathway": false,
+            "mode": "WALK",
+            "route": "",
+            "agencyTimeZoneOffset": 0,
+            "interlineWithPreviousLeg": false,
+            "from": {
+              "name": "Place Mohammed V",
+              "stopId": "1:S23",
+              "lon": -7.6200110999999975,
+              "lat": 33.5896439,
+              "arrival": 1553708940000,
+              "departure": 1553708941000,
+              "stopIndex": 12,
+              "stopSequence": 13,
+              "vertexType": "TRANSIT"
+            },
+            "to": {
+              "name": "Destination",
+              "lon": -7.621104241989088,
+              "lat": 33.59162397875197,
+              "arrival": 1553709213000,
+              "orig": "",
+              "vertexType": "NORMAL"
+            },
+            "legGeometry": {
+              "points": "in_lEhhom@i@W_@QKGQIOIICSKiA_@OGQEKEKl@I`@SHe@tBm@jC",
+              "length": 17
+            },
+            "rentedBike": false,
+            "transitLeg": false,
+            "duration": 272,
+            "intermediateStops": [],
+            "steps": [
+              {
+                "distance": 162.578,
+                "relativeDirection": "DEPART",
+                "streetName": "Avenue Hassan II",
+                "absoluteDirection": "NORTHEAST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.620049093808682,
+                "lat": 33.58965982622759,
+                "elevation": []
+              },
+              {
+                "distance": 179.929,
+                "relativeDirection": "LEFT",
+                "streetName": "road",
+                "absoluteDirection": "WEST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": true,
+                "lon": -7.6193568,
+                "lat": 33.591001,
+                "elevation": []
+              }
+            ]
+          }
+        ],
+        "tooSloped": false
+      },
+      {
+        "duration": 3138,
+        "startTime": 1553707137000,
+        "endTime": 1553710275000,
+        "walkTime": 791,
+        "transitTime": 1445,
+        "waitingTime": 902,
+        "walkDistance": 1004.6563984894836,
+        "walkLimitExceeded": false,
+        "elevationLost": 0,
+        "elevationGained": 0,
+        "transfers": 0,
+        "fare": {
+          "fare": {
+            "regular": {
+              "currency": {
+                "currency": "MAD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "MAD",
+                "symbol": "MAD"
+              },
+              "cents": 400
+            }
+          },
+          "details": {
+            "regular": [
+              {
+                "fareId": "1:BUS1",
+                "price": {
+                  "currency": {
+                    "currency": "MAD",
+                    "defaultFractionDigits": 2,
+                    "currencyCode": "MAD",
+                    "symbol": "MAD"
+                  },
+                  "cents": 400
+                },
+                "routes": [
+                  "1:R66"
+                ]
+              }
+            ]
+          }
+        },
+        "legs": [
+          {
+            "startTime": 1553707137000,
+            "endTime": 1553707581000,
+            "departureDelay": 0,
+            "arrivalDelay": 0,
+            "realTime": false,
+            "distance": 563.8530000000001,
+            "pathway": false,
+            "mode": "WALK",
+            "route": "",
+            "agencyTimeZoneOffset": 0,
+            "interlineWithPreviousLeg": false,
+            "from": {
+              "name": "Origin",
+              "lon": -7.637300491333009,
+              "lat": 33.58821963230516,
+              "departure": 1553707137000,
+              "orig": "",
+              "vertexType": "NORMAL"
+            },
+            "to": {
+              "name": "Oliverie",
+              "stopId": "1:S949",
+              "lon": -7.640637,
+              "lat": 33.585801399999994,
+              "arrival": 1553707581000,
+              "departure": 1553708482000,
+              "stopIndex": 0,
+              "stopSequence": 1,
+              "vertexType": "TRANSIT"
+            },
+            "legGeometry": {
+              "points": "qe_lEjtrm@x@rA`BnCbBs@VKY~DCd@V@b@DlBCp@?HfCH|B",
+              "length": 13
+            },
+            "rentedBike": false,
+            "transitLeg": false,
+            "duration": 444,
+            "intermediateStops": [],
+            "steps": [
+              {
+                "distance": 136.683,
+                "relativeDirection": "DEPART",
+                "streetName": "Rue el Mansour Saâdi",
+                "absoluteDirection": "SOUTHWEST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.637332472334378,
+                "lat": 33.58825216612041,
+                "elevation": []
+              },
+              {
+                "distance": 74.74,
+                "relativeDirection": "LEFT",
+                "streetName": "Rue Oumaima Assayh",
+                "absoluteDirection": "SOUTHEAST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.6384765,
+                "lat": 33.5874758,
+                "elevation": []
+              },
+              {
+                "distance": 107.81,
+                "relativeDirection": "HARD_RIGHT",
+                "streetName": "Boulevard Al Massira Al Khadra",
+                "absoluteDirection": "WEST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.638154200000001,
+                "lat": 33.586859600000004,
+                "elevation": []
+              },
+              {
+                "distance": 122.831,
+                "relativeDirection": "LEFT",
+                "streetName": "Rue de Normandie",
+                "absoluteDirection": "SOUTH",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.6393051000000005,
+                "lat": 33.587004,
+                "elevation": []
+              },
+              {
+                "distance": 121.789,
+                "relativeDirection": "RIGHT",
+                "streetName": "Rue Al Cadi Lass",
+                "absoluteDirection": "WEST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.639328000000001,
+                "lat": 33.5859022,
+                "elevation": []
+              }
+            ]
+          },
+          {
+            "startTime": 1553708482000,
+            "endTime": 1553709927000,
+            "departureDelay": 0,
+            "arrivalDelay": 0,
+            "realTime": false,
+            "distance": 7788.197457535703,
+            "pathway": false,
+            "mode": "BUS",
+            "route": "56",
+            "agencyName": "M'dina Bus",
+            "agencyUrl": "http://mdinabus.ma/",
+            "agencyTimeZoneOffset": 0,
+            "routeColor": "FA00FF",
+            "routeType": 3,
+            "routeId": "1:R66",
+            "routeTextColor": "FF0000",
+            "interlineWithPreviousLeg": false,
+            "tripShortName": "56 05:30 to Tacharouk",
+            "headsign": "Tacharouk",
+            "agencyId": "A2",
+            "tripId": "1:R66001",
+            "serviceDate": "20190327",
+            "from": {
+              "name": "Oliverie",
+              "stopId": "1:S949",
+              "lon": -7.640637,
+              "lat": 33.585801399999994,
+              "arrival": 1553707581000,
+              "departure": 1553708482000,
+              "stopIndex": 0,
+              "stopSequence": 1,
+              "vertexType": "TRANSIT"
+            },
+            "to": {
+              "name": "Grande Poste",
+              "stopId": "1:S374",
+              "lon": -7.618064200000001,
+              "lat": 33.5926624,
+              "arrival": 1553709927000,
+              "departure": 1553709928000,
+              "stopIndex": 17,
+              "stopSequence": 18,
+              "vertexType": "TRANSIT"
+            },
+            "legGeometry": {
+              "points": "mv~kE`ism@QqB?sCuDG_HbAaFdBiNzFf@zBbFbU\\dBxDxRcDzVEXo@tDaQ`@cIcUCIaI_TAE{@kC_CyGAC{AuDcAtAoAuBcC{Ha@qAmA_Eg@kBIoD?IIeCeBX}BiFyEeKKUqFyMmCaJsGqTK[yBkH`CqJzC_Mb@wCk@uFFyBnUeLzB}ABIr@iCvAoJxC_EfCnDd@p@bKtLLlTR`C\\~ARjAxCtP`AgDnAiEbGmPpC_LHa@",
+              "length": 65
+            },
+            "routeShortName": "56",
+            "routeLongName": "Ligne 56: Oliverie - Tacharouk",
+            "rentedBike": false,
+            "transitLeg": true,
+            "duration": 1445,
+            "intermediateStops": [
+              {
+                "name": "Résidence Rio",
+                "stopId": "1:S544",
+                "lon": -7.642015400000001,
+                "lat": 33.5916333,
+                "arrival": 1553708567000,
+                "departure": 1553708567000,
+                "stopIndex": 1,
+                "stopSequence": 2,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "St-Vélodrome",
+                "stopId": "1:S749",
+                "lon": -7.6460572,
+                "lat": 33.590320399999996,
+                "arrival": 1553708652000,
+                "departure": 1553708652000,
+                "stopIndex": 2,
+                "stopSequence": 3,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "Jardin Val d'Anfa",
+                "stopId": "1:S546",
+                "lon": -7.6530241,
+                "lat": 33.5907312,
+                "arrival": 1553708737000,
+                "departure": 1553708737000,
+                "stopIndex": 3,
+                "stopSequence": 4,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "CLUB BMCE",
+                "stopId": "1:S1061",
+                "lon": -7.650682,
+                "lat": 33.595043,
+                "arrival": 1553708822000,
+                "departure": 1553708822000,
+                "stopIndex": 4,
+                "stopSequence": 5,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "SOUK LHJAJMA",
+                "stopId": "1:S1062",
+                "lon": -7.647305,
+                "lat": 33.596633,
+                "arrival": 1553708907000,
+                "departure": 1553708907000,
+                "stopIndex": 5,
+                "stopSequence": 6,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "CENTRE SANTÉ OUHOUDE",
+                "stopId": "1:S1063",
+                "lon": -7.645138,
+                "lat": 33.597582,
+                "arrival": 1553708992000,
+                "departure": 1553708992000,
+                "stopIndex": 6,
+                "stopSequence": 7,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "RÉS LOUBNA II",
+                "stopId": "1:S1064",
+                "lon": -7.644856,
+                "lat": 33.598311,
+                "arrival": 1553709077000,
+                "departure": 1553709077000,
+                "stopIndex": 7,
+                "stopSequence": 8,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "Souk Bourgogne",
+                "stopId": "1:S174",
+                "lon": -7.642477499999999,
+                "lat": 33.5994156,
+                "arrival": 1553709162000,
+                "departure": 1553709162000,
+                "stopIndex": 8,
+                "stopSequence": 9,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "Laâouina Lharra",
+                "stopId": "1:S75",
+                "lon": -7.639672,
+                "lat": 33.600309100000004,
+                "arrival": 1553709247000,
+                "departure": 1553709247000,
+                "stopIndex": 9,
+                "stopSequence": 10,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "Café Le Lac",
+                "stopId": "1:S601",
+                "lon": -7.6359929000000015,
+                "lat": 33.602540600000005,
+                "arrival": 1553709332000,
+                "departure": 1553709332000,
+                "stopIndex": 10,
+                "stopSequence": 11,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "LA MÉDIATHÉQUE",
+                "stopId": "1:S1173",
+                "lon": -7.631784,
+                "lat": 33.604578,
+                "arrival": 1553709417000,
+                "departure": 1553709417000,
+                "stopIndex": 11,
+                "stopSequence": 12,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "PHARMACIE DERB TAZI",
+                "stopId": "1:S1174",
+                "lon": -7.628184,
+                "lat": 33.606021,
+                "arrival": 1553709502000,
+                "departure": 1553709502000,
+                "stopIndex": 12,
+                "stopSequence": 13,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "CHANTIERS ET ATELIERS DU MAROC",
+                "stopId": "1:S1175",
+                "lon": -7.61728,
+                "lat": 33.601063,
+                "arrival": 1553709587000,
+                "departure": 1553709587000,
+                "stopIndex": 13,
+                "stopSequence": 14,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "Houphouët Boigny",
+                "stopId": "1:S681",
+                "lon": -7.6145955,
+                "lat": 33.598651000000004,
+                "arrival": 1553709672000,
+                "departure": 1553709672000,
+                "stopIndex": 14,
+                "stopSequence": 15,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "Place Concorde",
+                "stopId": "1:S589",
+                "lon": -7.6221355,
+                "lat": 33.5962557,
+                "arrival": 1553709757000,
+                "departure": 1553709757000,
+                "stopIndex": 15,
+                "stopSequence": 16,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "Oued Lmakhazin",
+                "stopId": "1:S71",
+                "lon": -7.624108099999999,
+                "lat": 33.595153499999995,
+                "arrival": 1553709842000,
+                "departure": 1553709842000,
+                "stopIndex": 16,
+                "stopSequence": 17,
+                "vertexType": "TRANSIT"
+              }
+            ],
+            "steps": []
+          },
+          {
+            "startTime": 1553709928000,
+            "endTime": 1553710275000,
+            "departureDelay": 0,
+            "arrivalDelay": 0,
+            "realTime": false,
+            "distance": 440.59399999999994,
+            "pathway": false,
+            "mode": "WALK",
+            "route": "",
+            "agencyTimeZoneOffset": 0,
+            "interlineWithPreviousLeg": false,
+            "from": {
+              "name": "Grande Poste",
+              "stopId": "1:S374",
+              "lon": -7.618064200000001,
+              "lat": 33.5926624,
+              "arrival": 1553709927000,
+              "departure": 1553709928000,
+              "stopIndex": 17,
+              "stopSequence": 18,
+              "vertexType": "TRANSIT"
+            },
+            "to": {
+              "name": "Destination",
+              "lon": -7.621104241989088,
+              "lat": 33.59162397875197,
+              "arrival": 1553710275000,
+              "orig": "",
+              "vertexType": "NORMAL"
+            },
+            "legGeometry": {
+              "points": "ca`lE|{nm@Kd@GTGXI\\?BABGTo@jCo@|B|Az@xBpAvBvADIFY",
+              "length": 15
+            },
+            "rentedBike": false,
+            "transitLeg": false,
+            "duration": 347,
+            "intermediateStops": [],
+            "steps": [
+              {
+                "distance": 207.035,
+                "relativeDirection": "DEPART",
+                "streetName": "Boulevard de Paris",
+                "absoluteDirection": "WEST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.6180642,
+                "lat": 33.5926624,
+                "elevation": []
+              },
+              {
+                "distance": 215.45,
+                "relativeDirection": "LEFT",
+                "streetName": "Rue Abderrahmane Sahraoui",
+                "absoluteDirection": "SOUTHWEST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.6201245,
+                "lat": 33.5933835,
+                "elevation": []
+              },
+              {
+                "distance": 18.109,
+                "relativeDirection": "LEFT",
+                "streetName": "road",
+                "absoluteDirection": "SOUTHEAST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -7.6212774,
+                "lat": 33.5917015,
+                "elevation": []
+              }
+            ]
+          }
+        ],
+        "tooSloped": false
+      }
+    ]
+  },
+  "debugOutput": {
+    "precalculationTime": 19,
+    "pathCalculationTime": 9,
+    "pathTimes": [
+      3,
+      3,
+      3
+    ],
+    "renderingTime": 1,
+    "totalTime": 29,
+    "timedOut": false
+  },
+  "elevationMetadata": {
+    "ellipsoidToGeoidDifference": 46.13932641729835,
+    "geoidElevation": false
+  }
 }

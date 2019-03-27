@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet, View, FlatList, TextInput, Dimensions, TouchableOpacity,
+  StyleSheet, View, FlatList, TouchableOpacity,
 } from 'react-native';
 import { Text, Icon } from 'native-base';
 import { connect } from 'react-redux';
-import Moment from 'react-moment';
 import WalkRoute from './routes/WalkRoute';
 import TransitRoute from './routes/TransitRoute';
-
-const SCREEN_WIDTH = Dimensions.get('window').width;
-const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class ListRoutes extends Component {
   constructor(props) {
@@ -23,58 +19,75 @@ class ListRoutes extends Component {
     this.props.navigation.navigate('MainItinirary');
   }
 
-  renderItem = ({ item }) => (
-    <TouchableOpacity style={styles.container} onPress={() => { this.selectRoute(item); }}>
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-        <Text style={styles.minuteText}> {'Départ :  18h30'} </Text>
-        <Text style={styles.minuteText}> {'Arrivée : 18h30'} </Text>
-      </View>
-      <View style={styles.containerTextDepart}>
-      {
-        item.legs.map((leg, i) => {
-          if (leg.mode === 'WALK') {
-            return (
-              <WalkRoute
-                key={i}
-                distance={ Math.round(leg.distance * 100 / 100)}
-                isLast={(i === (item.legs.length - 1))}
-                />
-            );
-          }
-          if (leg.mode === 'TAXI') {
-            return (
-              <React.Fragment key={i}>
-                <View></View>
-                  <Icon style={{
-                    fontSize: 30, paddingHorizontal: 8, paddingVertical: 3, color: 'white', backgroundColor: '#8B0000', borderRadius: 18,
-                  }} name="md-car" />
-                <Text style={styles.minuteText}> {'Petit Taxi'} </Text>
-              </React.Fragment>);
-          }
-          return (
-              <TransitRoute
-                type={leg.mode}
-                key={i}
-                routeName={leg.routeShortName}
-                isLast={(i === (item.legs.length - 1))}
-                />
-          );
-        })
-      }
-      <View>
-        <View style={{ backgroundColor: 'black', alignItems: 'center' }}>
-          <Text style = {{ color: 'white', fontSize: 12, fontFamily: 'PTSans-Bold' }}>{Math.round((item.fare.fare.regular.cents / 100) * 2) / 2} {'Dhs'}</Text>
+  renderItem = ({ item }) => {
+    const startTime = new Date(item.startTime);
+    const endTime = new Date(item.endTime);
+    const startTimeParse = `${startTime.getHours()}:${startTime.getMinutes() < 10 ? '0' : ''}${startTime.getMinutes()}`;
+    const endTimeParse = `${endTime.getHours()}:${endTime.getMinutes() < 10 ? '0' : ''}${endTime.getMinutes()}`;
+    return (
+      <TouchableOpacity style={styles.container} onPress={() => { this.selectRoute(item); }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <Text style={styles.minuteText}> {`Départ : ${startTimeParse}`} </Text>
+          <Text style={styles.minuteText}> {`Arrivée : ${endTimeParse}`} </Text>
         </View>
-        <Text style={styles.timeText}> {Math.round(item.duration / 60)} </Text>
-        <Text style={styles.minuteText}> {'Minutes'} </Text>
-        {/* <Text style={styles.timeText}> {Math.round((item.fare.fare.regular.cents / 100) * 2) / 2} </Text>
-        <Text style={styles.minuteText}> {'Dhs'} </Text> */}
+        <View style={styles.containerTextDepart}>
+        {
+          item.legs.map((leg, i) => {
+            if (leg.mode !== 'WALK') {
+              let isLast = false;
+              if (item.legs[item.legs.length - 1].mode === 'WALK') {
+                isLast = (i === (item.legs.length - 2));
+              } else {
+                isLast = (i === (item.legs.length - 1));
+              }
+              return (
+                  <TransitRoute
+                    style={{ top: 10 }}
+                    type={leg.mode}
+                    key={i}
+                    routeName={leg.routeShortName}
+                    isLast={isLast}
+                    />
+              );
+            }
+            // if (leg.mode === 'WALK') {
+            //   return (
+            //     <WalkRoute
+            //       style={{ top: 10 }}
+            //       key={i}
+            //       distance={ Math.round(leg.distance * 100 / 100)}
+            //       isLast={(i === (item.legs.length - 1))}
+            //       />
+            //   );
+            // }
+            if (leg.mode === 'TAXI') {
+              return (
+                <React.Fragment key={i}>
+                  <View></View>
+                    <Icon style={{
+                      fontSize: 30, paddingHorizontal: 8, paddingVertical: 3, color: 'white', backgroundColor: '#8B0000', borderRadius: 18,
+                    }} name="md-car" />
+                  <Text style={styles.minuteText}> {'Petit Taxi'} </Text>
+                </React.Fragment>);
+            }
+
+            return null;
+          })
+        }
+        <View>
+          <View style={{ backgroundColor: 'black', alignItems: 'center' }}>
+            <Text style = {{ color: 'white', fontSize: 12, fontFamily: 'PTSans-Bold' }}>{Math.round((item.fare.fare.regular.cents / 100) * 2) / 2} {'Dhs'}</Text>
+          </View>
+          <Text style={styles.timeText}> {Math.round(item.duration / 60)} </Text>
+          <Text style={styles.minuteText}> {'Minutes'} </Text>
+          {/* <Text style={styles.timeText}> {Math.round((item.fare.fare.regular.cents / 100) * 2) / 2} </Text>
+          <Text style={styles.minuteText}> {'Dhs'} </Text> */}
+        </View>
+
       </View>
-
-    </View>
-    </TouchableOpacity>
-
-  );
+      </TouchableOpacity>
+    );
+  };
 
   renderHeader = () => (
     <View style={styles.containerBlocDepart}>

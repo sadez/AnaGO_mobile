@@ -7,7 +7,7 @@ class BusRoute extends Component {
     switch (param) {
       case 'BUS':
         return (<React.Fragment>
-            <View style={{ top: 10, alignItems: 'center' }}>
+            <View style={[this.props.style, { alignItems: 'center' }]}>
               <Icon style={[styles.iconTransit, { color: 'white', backgroundColor: '#000FA3' }]} name="md-bus" />
               <Text style={[styles.directionText2, { color: '#000FA3' }]}>{'Bus '}{ this.props.routeName}</Text>
             </View>
