@@ -7,11 +7,10 @@ class WalkRoute extends Component {
     return (
       <React.Fragment>
         <View style={{ top: 10, alignItems: 'center' }}>
-            <Icon style={{ fontSize: 40, paddingHorizontal: 8, color: 'grey' }} name="ios-walk" />
+            <Icon style={{ fontSize: 35, paddingHorizontal: 8, color: 'grey' }} name="ios-walk" />
             <Text style={styles.directionText2}>{ this.props.distance }{' m'}</Text>
         </View>
         {!this.props.isLast ? <Text style={styles.directionText}>{'>'}</Text> : null }
-
       </React.Fragment>
     );
   }

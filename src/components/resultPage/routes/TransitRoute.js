@@ -9,7 +9,7 @@ class BusRoute extends Component {
         return (<React.Fragment>
             <View style={{ top: 10, alignItems: 'center' }}>
               <Icon style={[styles.iconTransit, { color: 'white', backgroundColor: '#000FA3' }]} name="md-bus" />
-              <Text style={styles.directionText2}>{'Bus '}{ this.props.routeName}</Text>
+              <Text style={[styles.directionText2, { color: '#000FA3' }]}>{'Bus '}{ this.props.routeName}</Text>
             </View>
             {!this.props.isLast ? <Text style={styles.directionText}>{'>'}</Text> : null }
           </React.Fragment>);
@@ -17,7 +17,7 @@ class BusRoute extends Component {
         return (<React.Fragment >
           <View style={{ top: 10, alignItems: 'center' }}>
             <Icon style={[styles.iconTransit, { color: 'white', backgroundColor: '#FDAE10' }]} name="md-subway" />
-            <Text style={styles.directionText2}>{'Tram '}{ this.props.routeName}</Text>
+            <Text style={[styles.directionText2, { color: '#FDAE10' }]}>{'Tram '}{ this.props.routeName}</Text>
           </View>
           {!this.props.isLast ? <Text style={styles.directionText}>{'>'}</Text> : null }
         </React.Fragment>);
@@ -25,7 +25,7 @@ class BusRoute extends Component {
         return (<React.Fragment>
             <View style={{ top: 10, alignItems: 'center' }}>
               <Icon style={[styles.iconTransit, { color: 'white', backgroundColor: '#6D6049' }]} name="md-train" />
-              <Text style={styles.directionText2}>{'Train '}{ this.props.routeName}</Text>
+              <Text style={[styles.directionText2, { color: '#6D6049' }]}>{'Train '}{ this.props.routeName}</Text>
             </View>
           {!this.props.isLast ? <Text style={styles.directionText}>{'>'}</Text> : null }
           </React.Fragment>);
@@ -33,7 +33,7 @@ class BusRoute extends Component {
         return (<React.Fragment>
           <View style={{ top: 10, alignItems: 'center' }}>
             <Icon style={styles.iconGtaxi} name="md-car" />
-            <Text style={styles.directionText2}>{'Grand Taxi '}</Text>
+            <Text style={[styles.directionText2, { color: 'grey' }]}>{'Grand Taxi '}</Text>
           </View>
             {!this.props.isLast ? <Text style={styles.directionText}>{'>'}</Text> : null }
         </React.Fragment>);
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     borderWidth: 0.5,
     borderColor: 'grey',
-  }
+  },
 });
 
 export default BusRoute;

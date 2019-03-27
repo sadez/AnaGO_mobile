@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet, View, FlatList, TextInput, Dimensions,
+  StyleSheet, View, FlatList, TextInput, Dimensions, TouchableOpacity,
 } from 'react-native';
 import { Text, Icon } from 'native-base';
+import { connect } from 'react-redux';
 import Moment from 'react-moment';
 import WalkRoute from './routes/WalkRoute';
 import TransitRoute from './routes/TransitRoute';
@@ -16,9 +17,19 @@ class ListRoutes extends Component {
     this.state = { text: '' };
   }
 
-  renderItem = ({ item }) => (
-    <View style={styles.containerTextDepart}>
+  // pagination
+  selectRoute(item) {
+    this.props.selectRoute(item);
+    this.props.navigation.navigate('MainItinirary');
+  }
 
+  renderItem = ({ item }) => (
+    <TouchableOpacity style={styles.container} onPress={() => { this.selectRoute(item); }}>
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+        <Text style={styles.minuteText}> {'Départ :  18h30'} </Text>
+        <Text style={styles.minuteText}> {'Arrivée : 18h30'} </Text>
+      </View>
+      <View style={styles.containerTextDepart}>
       {
         item.legs.map((leg, i) => {
           if (leg.mode === 'WALK') {
@@ -61,26 +72,51 @@ class ListRoutes extends Component {
       </View>
 
     </View>
+    </TouchableOpacity>
 
   );
 
   renderHeader = () => (
-    <View style={styles.containerBlocDepartDestination}>
-      <View style={{ flex: 3 }}>
+    <View style={styles.containerBlocDepart}>
 
-        <View style={{
-          height: 40, borderWidth: 1, borderColor: 'white', borderRadius: 4, width: '100%',
-        }}>
-        <Text>dsdadsa</Text>
+      <TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => this.props.navigation.navigate('MainMap')}>
+          <Icon style={{
+            fontSize: 20, color: 'white', paddingRight: 5,
+          }} name="ios-arrow-back" />
+        <Text style={{ color: 'white', fontSize: 12 }}>Retour</Text>
+      </TouchableOpacity>
 
+      <View style={styles.containerBlocDepartChild}>
+        <View style={{ flex: 4 }}>
+
+          <View style={{
+            height: 80, borderWidth: 1, borderColor: 'white', borderRadius: 6, width: '100%', marginVertical: 5,
+          }}>
+            <Text style={{
+              padding: 12, color: 'white', fontSize: 12, fontFamily: 'PTSans-Bold',
+            }}>{this.props.positionMarker1.address}</Text>
+          </View>
+          <View style={{
+            height: 80, borderWidth: 1, borderColor: 'white', borderRadius: 6, width: '100%', marginVertical: 5,
+          }}>
+          <Text style={{
+            padding: 12, color: 'white', fontSize: 12, fontFamily: 'PTSans-Bold',
+          }}>{this.props.positionMarker2.address}</Text>
+
+          </View>
+        </View>
+        <TouchableOpacity style={{ flex: 1, flexDirection: 'row' }}>
+
+              <Icon style={{
+                fontSize: 30, paddingLeft: 20, paddingVertical: 3, color: 'white',
+              }} name="ios-arrow-down" />
+              <Icon style={{
+                fontSize: 30, paddingVertical: 3, color: 'white',
+              }} name="ios-arrow-up" />
+
+        </TouchableOpacity>
       </View>
-        <View style={{
-          height: 40, borderWidth: 1, borderColor: 'white', borderRadius: 4, width: '100%',
-        }}></View>
-      </View>
-      <View style={{ flex: 1, backgroundColor: 'grey' }}>
-        <Text style={{ color: 'white' }}> From - destination block </Text>
-      </View>
+
     </View>
 
   );
@@ -96,9 +132,9 @@ class ListRoutes extends Component {
     return (
 
           <FlatList
-            style={{ marginVertical: 10 }}
             data={this.props.data.plan.itineraries}
             renderItem={this.renderItem}
+            extraData={this.props.selectedRoute}
             keyExtractor={item => `index${item.walkDistance}`}
             ListHeaderComponent={this.renderHeader}
             ListFooterComponent={this.renderFooter}
@@ -109,35 +145,40 @@ class ListRoutes extends Component {
 }
 
 const styles = StyleSheet.create({
-  containerBlocDepartDestination: {
+  containerBlocDepartChild: {
     flexDirection: 'row',
-    borderColor: '#000FA3',
-    borderWidth: 0.5,
-    backgroundColor: '#2352D7',
-    elevation: -1,
-    borderRadius: 4,
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 10,
+    padding: 8,
+    minHeight: 70,
+  },
+  containerBlocDepart: {
+    borderColor: '#1a7746',
+    borderWidth: 0.5,
+    backgroundColor: '#2bc875',
+    elevation: -1,
+    borderBottomRightRadius: 4,
+    borderBottomLeftRadius: 4,
+    padding: 8,
     zIndex: 1,
     marginHorizontal: 0,
-    marginVertical: 5,
-    minHeight: 80,
   },
   containerTextDepart: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    minHeight: 70,
+  },
+  container: {
     borderColor: '#efefef',
     borderWidth: 1,
     backgroundColor: '#fbfbfb',
     elevation: 1,
     borderRadius: 2,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 10,
+    padding: 8,
     zIndex: 1,
     marginHorizontal: 0,
     marginVertical: 5,
-    minHeight: 80,
   },
   timeText: {
     fontSize: 32,
@@ -149,16 +190,16 @@ const styles = StyleSheet.create({
     fontFamily: 'PTSans-Regular',
     color: 'grey',
   },
-  directionText: {
-    fontSize: 20,
-    fontFamily: 'PTSans-Bold',
-    color: '#B8C1C3',
-  },
-  directionText2: {
-    fontSize: 14,
-    fontFamily: 'PTSans-Bold',
-    color: '#B8C1C3',
-  },
 });
 
-export default ListRoutes;
+const mapStateToProps = state => ({
+  positionMarker1: state.map.positionMarker1,
+  positionMarker2: state.map.positionMarker2,
+  selectedRoute: state.map.selectedRoute,
+});
+
+const mapDispatchToProps = dispatch => ({
+  selectRoute: payload => dispatch({ type: 'SELECT_ROUTE', payload }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListRoutes);

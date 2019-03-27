@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   },
   buttonAnago: {
     alignItems: 'center',
-    backgroundColor: '#388e3c',
+    backgroundColor: '#1a7746',
     padding: 10,
     width: SCREEN_WIDTH * 2 / 3,
     borderRadius: 5,

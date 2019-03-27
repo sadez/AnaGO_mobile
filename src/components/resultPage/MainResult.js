@@ -16,7 +16,7 @@ class MainResult extends Component {
       <View style={styles.container}>
       {/* <Header navigation={this.props.navigation}></Header> */}
       {
-        resultApi ? <ListRoutes data={resultApi}></ListRoutes> : null
+        resultApi ? <ListRoutes data={resultApi} navigation={this.props.navigation}></ListRoutes> : null
       }
       </View>
     );
