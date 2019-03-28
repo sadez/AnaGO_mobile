@@ -31,7 +31,7 @@ class ItiniraryElement extends Component {
                 : null
             }
         </View>);
-      case 'TRAIN':
+      case ('RAIL'):
         return (<View style={styles.container}>
             {
               this.props.isFirst ? <View style={[styles.circleHoleFirst, { borderColor: '#6D6049' }]} />
@@ -50,6 +50,18 @@ class ItiniraryElement extends Component {
               : <View style={[styles.circle, { backgroundColor: 'grey' }]} />
           }
           <View style={[styles.line, { borderLeftColor: 'grey' }]} />
+            {
+              this.props.isLast ? <View style={[styles.circleHole, { borderColor: '#2bc875' }]} />
+                : null
+            }
+        </View>);
+      case 'TAXI':
+        return (<View style={styles.container}>
+          {
+            this.props.isFirst ? <View style={[styles.circleHoleFirst, { borderColor: '#8B0000' }]} />
+              : <View style={[styles.circle, { backgroundColor: '#8B0000' }]} />
+          }
+          <View style={[styles.line, { borderLeftColor: '#8B0000' }]} />
             {
               this.props.isLast ? <View style={[styles.circleHole, { borderColor: '#2bc875' }]} />
                 : null

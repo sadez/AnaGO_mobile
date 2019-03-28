@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     borderRadius: 2,
     padding: 8,
     zIndex: 1,
-    marginHorizontal: 0,
+    marginHorizontal: 10,
     marginVertical: 5,
   },
   timeText: {

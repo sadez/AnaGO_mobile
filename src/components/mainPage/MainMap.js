@@ -15,7 +15,7 @@ class MainMap extends Component {
     return (
       <View style={styles.container}>
         <Header isHome></Header>
-        <FormSearch></FormSearch>
+        <FormSearch navigation={this.props.navigation}></FormSearch>
         {/* <MapContainer></MapContainer> */}
      </View>
     );

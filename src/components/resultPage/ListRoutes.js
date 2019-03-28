@@ -33,6 +33,16 @@ class ListRoutes extends Component {
         <View style={styles.containerTextDepart}>
         {
           item.legs.map((leg, i) => {
+            if (leg.mode === 'TAXI') {
+              return (
+                <React.Fragment key={i}>
+                  <View></View>
+                    <Icon style={{
+                      fontSize: 30, paddingHorizontal: 8, paddingVertical: 3, color: 'white', backgroundColor: '#8B0000', borderRadius: 18,
+                    }} name="md-car" />
+                  <Text style={styles.minuteText}> {'Petit Taxi'} </Text>
+                </React.Fragment>);
+            }
             if (leg.mode !== 'WALK') {
               let isLast = false;
               if (item.legs[item.legs.length - 1].mode === 'WALK') {
@@ -60,16 +70,6 @@ class ListRoutes extends Component {
             //       />
             //   );
             // }
-            if (leg.mode === 'TAXI') {
-              return (
-                <React.Fragment key={i}>
-                  <View></View>
-                    <Icon style={{
-                      fontSize: 30, paddingHorizontal: 8, paddingVertical: 3, color: 'white', backgroundColor: '#8B0000', borderRadius: 18,
-                    }} name="md-car" />
-                  <Text style={styles.minuteText}> {'Petit Taxi'} </Text>
-                </React.Fragment>);
-            }
 
             return null;
           })
@@ -151,6 +151,7 @@ class ListRoutes extends Component {
             keyExtractor={item => `index${item.walkDistance}`}
             ListHeaderComponent={this.renderHeader}
             ListFooterComponent={this.renderFooter}
+            showsVerticalScrollIndicator={false}
           />
 
     );
@@ -190,7 +191,7 @@ const styles = StyleSheet.create({
     borderRadius: 2,
     padding: 8,
     zIndex: 1,
-    marginHorizontal: 0,
+    marginHorizontal: 10,
     marginVertical: 5,
   },
   timeText: {

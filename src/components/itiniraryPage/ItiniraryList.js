@@ -25,6 +25,7 @@ class ItiniraryList extends Component {
              isLast={true}
              />
              : <TransitRoute
+             style={{ top: 10 }}
              type={item.mode}
              routeName={item.routeShortName}
              isLast={true}
@@ -45,8 +46,18 @@ class ItiniraryList extends Component {
 
              {
                (item.mode === 'WALK')
-                 ? <Text maxHeight={5} numberOfLines={1} style={[styles.addressText, { width: 100 }]}> {item.to.name} </Text>
-                 : <Text maxHeight={5} numberOfLines={1} style={[styles.addressText, { width: 100 }]}> {`${item.intermediateStops.length} arrêts` } </Text>
+                 ? <Text maxHeight={10} numberOfLines={1} style={[styles.addressText, { width: 110 }]}> {item.to.name} </Text>
+                 : (item.intermediateStops.length > 0)
+                   ? <Text maxHeight={5} numberOfLines={1} style={[styles.addressText, { width: 110 }]}> {`${item.intermediateStops.length} arrêts` } </Text> : null
+
+             }
+             {
+               (item.mode !== 'WALK')
+                 ? <React.Fragment>
+                 <Text maxHeight={5} numberOfLines={1} style={[styles.directionText, { width: 110 }]}> {'Descendre à :'} </Text>
+                 <Text maxHeight={5} numberOfLines={1} style={[styles.addressText, { width: 110 }]}> {`${item.to.name}`} </Text>
+               </React.Fragment>
+                 : null
              }
              <Text style={styles.directionText}>  {`(${Math.round(item.duration / 60)} min)`} </Text>
            </View>
@@ -114,6 +125,7 @@ class ItiniraryList extends Component {
             keyExtractor={item => `index${item.distance}`}
             ListHeaderComponent={this.renderHeader(startTimeParse)}
             ListFooterComponent={this.renderFooter(endTimeParse)}
+            showsVerticalScrollIndicator={false}
           />
 
       </View>
@@ -124,8 +136,8 @@ class ItiniraryList extends Component {
 const styles = StyleSheet.create({
   container: {
     padding: 8,
-    zIndex: 1,
-    marginHorizontal: '10%',
+    marginHorizontal: '8%',
+
   },
   directionText: {
     fontSize: 12,
@@ -151,12 +163,11 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   containerDetailItinirary: {
-    borderColor: '#1a7746',
-    borderWidth: 0.5,
+    borderColor: '#efefef',
+    borderWidth: 1,
     backgroundColor: '#fbfbfb',
-    elevation: -1,
-    borderBottomRightRadius: 4,
-    borderBottomLeftRadius: 4,
+    elevation: 1,
+    borderRadius: 2,
     padding: 8,
     zIndex: 1,
     marginHorizontal: 0,

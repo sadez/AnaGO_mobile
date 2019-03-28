@@ -68,8 +68,8 @@ function user(state = initialUserState, action) {
 
 // Reducer of user and token
 const initialMapState = {
-  positionMarker1: { lat: 84, lon: 84, address: 'Time Square - 42nd Street' },
-  positionMarker2: { lat: 84, lon: 84, address: 'Time Square - 55th Street' },
+  positionMarker1: { lat: 0, lon: 0, address: '' },
+  positionMarker2: { lat: 0, lon: 0, address: '' },
   dataEndpoint: {},
   selectedRoute: {
     duration: 2039,

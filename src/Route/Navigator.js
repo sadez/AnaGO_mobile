@@ -40,7 +40,7 @@ const RootNavigator = createStackNavigator({
 {
   headerMode: 'none',
   mode: 'modal',
-  initialRouteName: 'MainItinirary',
+  initialRouteName: 'MainMap',
 });
 
 const AppWithNavigationState = reduxifyNavigator(RootNavigator, 'root');

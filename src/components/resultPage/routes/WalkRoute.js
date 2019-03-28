@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     color: '#B8C1C3',
   },
   directionText2: {
-    fontSize: 14,
+    fontSize: 13,
     fontFamily: 'PTSans-Bold',
     color: '#B8C1C3',
   },

@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import {
   StyleSheet, View, Dimensions, Platform, Text,
 } from 'react-native';
+import { connect } from 'react-redux';
 import Header from '../Header';
 import ListRoutes from './ListRoutes';
-import resultApi from '../../assets/api.json';
+
+// import resultApi from '../../assets/api.json';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -16,7 +18,7 @@ class MainResult extends Component {
       <View style={styles.container}>
       {/* <Header navigation={this.props.navigation}></Header> */}
       {
-        resultApi ? <ListRoutes data={resultApi} navigation={this.props.navigation}></ListRoutes> : null
+        this.props.dataEndpoint ? <ListRoutes data={this.props.dataEndpoint} navigation={this.props.navigation}></ListRoutes> : null
       }
       </View>
     );
@@ -26,8 +28,12 @@ class MainResult extends Component {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
-    backgroundColor: 'white',
+    backgroundColor: '#efefef',
   },
 });
 
-export default MainResult;
+const mapStateToProps = state => ({
+  dataEndpoint: state.map.dataEndpoint,
+});
+
+export default connect(mapStateToProps, null)(MainResult);
