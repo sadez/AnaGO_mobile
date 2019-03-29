@@ -10,30 +10,6 @@ const SCREEN_HEIGHT = Dimensions.get('window').height;
 const homePlace = { description: 'Casa Voyageurs', geometry: { location: { lat: 33.590597, lng: -7.592048 } } };
 const workPlace = { description: 'Casa Port', geometry: { location: { lat: 33.599588, lng: -7.612833 } } };
 
-// uses of decoding polylines
-const deco_polyline = require('@mapbox/polyline');
-
-// function returning array of polyline and mode from OSM data list of itineraries
-function polylineFromData(data) {
-  const arrayOfPolylines = [];
-  if (data.plan.itineraries) {
-    for (let i = 0; i < data.plan.itineraries.length; i += 1) {
-      arrayOfPolylines.push([]);
-    }
-    for (let i = 0; i < data.plan.itineraries.length; i += 1) {
-      for (let j = 0; j < data.plan.itineraries[i].legs.length; j += 1) {
-        arrayOfPolylines[i].push(
-          {
-            polyline: deco_polyline.decode(data.plan.itineraries[i].legs[j].legGeometry.points),
-            mode: data.plan.itineraries[i].legs[j].mode,
-          },
-        );
-      }
-    }
-  }
-  return arrayOfPolylines;
-}
-
 class FormSearch extends Component {
   constructor(props) {
     super(props);

@@ -500,6 +500,122 @@ const initialMapState = {
     tooSloped: false,
   },
   isRoutes: false,
+  selectedLeg: {
+    startTime: 1553707137000,
+    endTime: 1553707498000,
+    departureDelay: 0,
+    arrivalDelay: 0,
+    realTime: false,
+    distance: 434.256,
+    pathway: false,
+    mode: 'WALK',
+    route: '',
+    agencyTimeZoneOffset: 0,
+    interlineWithPreviousLeg: false,
+    from: {
+      name: 'Origin',
+      lon: -7.637300491333009,
+      lat: 33.58821963230516,
+      departure: 1553707137000,
+      orig: '',
+      vertexType: 'NORMAL',
+    },
+    to: {
+      name: 'Angle Anfa/Zerktouni',
+      stopId: '1:S198',
+      lon: -7.636147500000001,
+      lat: 33.5912539,
+      arrival: 1553707498000,
+      departure: 1553708399000,
+      stopIndex: 6,
+      stopSequence: 7,
+      vertexType: 'TRANSIT',
+    },
+    legGeometry: {
+      points: 'qe_lEjtrm@MSyApAc@}@s@yAs@{A[PqCq@EAoA_@GAAB?BABABCBCBCBC@E@C?E?CACACACACCCEACAEAESL',
+      length: 32,
+    },
+    rentedBike: false,
+    transitLeg: false,
+    duration: 361,
+    intermediateStops: [],
+    steps: [
+      {
+        distance: 12.256,
+        relativeDirection: 'DEPART',
+        streetName: 'Rue el Mansour Saâdi',
+        absoluteDirection: 'NORTHEAST',
+        stayOn: false,
+        area: false,
+        bogusName: false,
+        lon: -7.637332472334378,
+        lat: 33.58825216612041,
+        elevation: [],
+      },
+      {
+        distance: 63.317,
+        relativeDirection: 'LEFT',
+        streetName: "Place du Nid d'Iris",
+        absoluteDirection: 'NORTHWEST',
+        stayOn: false,
+        area: false,
+        bogusName: false,
+        lon: -7.637230100000001,
+        lat: 33.588322000000005,
+        elevation: [],
+      },
+      {
+        distance: 137.184,
+        relativeDirection: 'RIGHT',
+        streetName: 'Rue Assilm',
+        absoluteDirection: 'NORTHEAST',
+        stayOn: false,
+        area: false,
+        bogusName: false,
+        lon: -7.6376403,
+        lat: 33.5887775,
+        elevation: [],
+      },
+      {
+        distance: 156.789,
+        relativeDirection: 'LEFT',
+        streetName: 'road',
+        absoluteDirection: 'NORTHWEST',
+        stayOn: false,
+        area: false,
+        bogusName: true,
+        lon: -7.6364220000000005,
+        lat: 33.589479000000004,
+        elevation: [],
+      },
+      {
+        distance: 51.916,
+        relativeDirection: 'CIRCLE_CLOCKWISE',
+        streetName: "Boulevard d'Anfa",
+        absoluteDirection: 'NORTHWEST',
+        exit: '4',
+        stayOn: false,
+        area: false,
+        bogusName: false,
+        lon: -7.6360859,
+        lat: 33.5908141,
+        elevation: [],
+      },
+      {
+        distance: 12.794,
+        relativeDirection: 'LEFT',
+        streetName: 'Boulevard Mohamed Zerktouni',
+        absoluteDirection: 'NORTHWEST',
+        stayOn: false,
+        area: false,
+        bogusName: false,
+        lon: -7.6360796,
+        lat: 33.5911537,
+        elevation: [],
+      },
+    ],
+  },
+  selectedPoly: {},
 };
 
 function map(state = initialMapState, action) {
@@ -512,6 +628,10 @@ function map(state = initialMapState, action) {
       return { ...state, dataEndpoint: action.payload };
     case 'SELECT_ROUTE':
       return { ...state, selectedRoute: action.payload };
+    case 'SELECT_LEG':
+      return { ...state, selectedLeg: action.payload };
+    case 'SELECT_POLY':
+      return { ...state, selectedPoly: action.payload };
     case 'SWITCH_ROUTES':
       return { ...state, isRoutes: !state.isRoutes };
     default:

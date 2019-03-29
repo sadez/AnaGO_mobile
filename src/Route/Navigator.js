@@ -8,6 +8,7 @@ import { reduxifyNavigator, createReactNavigationReduxMiddleware } from 'react-n
 import MainMap from '../components/mainPage/MainMap';
 import MainResult from '../components/resultPage/MainResult';
 import MainItinirary from '../components/itiniraryPage/MainItinirary';
+import MainDetailMap from '../components/detailMap/MainDetailMap';
 
 const middleware = createReactNavigationReduxMiddleware(
   'root',
@@ -36,6 +37,7 @@ const RootNavigator = createStackNavigator({
   MainMap: { screen: MainMap },
   MainResult: { screen: MainResult },
   MainItinirary: { screen: MainItinirary },
+  MainDetailMap: { screen: MainDetailMap },
 },
 {
   headerMode: 'none',

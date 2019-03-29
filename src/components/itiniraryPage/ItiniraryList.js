@@ -3,17 +3,25 @@ import {
   StyleSheet, View, FlatList, TouchableOpacity,
 } from 'react-native';
 import { Text, Icon } from 'native-base';
+import { connect } from 'react-redux';
 import WalkRoute from '../resultPage/routes/WalkRoute';
 import TransitRoute from '../resultPage/routes/TransitRoute';
 import ItiniraryElement from './ItiniraryElement';
 
+const decoPolyline = require('@mapbox/polyline');
+
 class ItiniraryList extends Component {
+  selectLeg(item) {
+    this.props.selectLeg(item);
+    this.props.navigation.navigate('MainDetailMap');
+  }
+
   renderItem = ({ item, index }) => {
     const { legs } = this.props;
     const startTime = new Date(item.startTime);
     const startTimeParse = `${startTime.getHours()}:${startTime.getMinutes() < 10 ? '0' : ''}${startTime.getMinutes()}`;
     return (
-     <TouchableOpacity style={styles.container}>
+     <TouchableOpacity style={styles.container} onPress={() => this.selectLeg(item)}>
        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
          <View style={{ width: '40%', flexDirection: 'row', justifyContent: 'space-between' }}>
            <Text style={styles.addressText}>{startTimeParse}</Text>
@@ -113,7 +121,23 @@ class ItiniraryList extends Component {
   );
 
   render() {
-    const { legs, startTimeParse, endTimeParse } = this.props;
+    const {
+      legs, startTimeParse, endTimeParse, selectPoly,
+    } = this.props;
+
+    const AllPolylinesReturn = [];
+    for (let i = 0; i < legs.length; i += 1) {
+      const polylinesReturn = [];
+      if (legs[i].legGeometry) {
+        const polylines = decoPolyline.decode(legs[i].legGeometry.points);
+        for (let j = 0; j < polylines.length; j += 1) {
+          polylinesReturn.push({ latitude: polylines[j][0], longitude: polylines[j][1] });
+        }
+        AllPolylinesReturn.push({ polyline: polylinesReturn, mode: legs[i].mode });
+      }
+    }
+
+    selectPoly(AllPolylinesReturn);
 
     return (
       <View style={{ height: '75%' }}>
@@ -174,4 +198,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ItiniraryList;
+const mapDispatchToProps = dispatch => ({
+  selectLeg: payload => dispatch({ type: 'SELECT_LEG', payload }),
+  selectPoly: payload => dispatch({ type: 'SELECT_POLY', payload }),
+});
+
+export default connect(null, mapDispatchToProps)(ItiniraryList);

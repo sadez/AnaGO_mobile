@@ -96,7 +96,7 @@ class MainItinirary extends Component {
             : null
         }
 
-          <ItiniraryList startTimeParse={startTimeParse} endTimeParse={endTimeParse} legs={selectedRoute.legs}></ItiniraryList>
+          <ItiniraryList navigation={this.props.navigation} startTimeParse={startTimeParse} endTimeParse={endTimeParse} legs={selectedRoute.legs}></ItiniraryList>
 
       </View>
 
