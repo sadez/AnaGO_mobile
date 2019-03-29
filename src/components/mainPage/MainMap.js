@@ -66,7 +66,7 @@ class MainMap extends Component {
         </View>
         {/* <FormSearch navigation={this.props.navigation}></FormSearch> */}
       <View style={styles.container}>
-        <MapContainer></MapContainer>
+        <MapContainer navigation={this.props.navigation}></MapContainer>
       </View>
 
      </View>

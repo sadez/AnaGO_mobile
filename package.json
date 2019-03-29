@@ -18,6 +18,7 @@
     "native-base": "^2.8.0",
     "prop-types": "^15.6.2",
     "react": "16.6.3",
+    "react-geocode": "^0.1.2",
     "react-moment": "^0.8.4",
     "react-native": "0.57.8",
     "react-native-easy-grid": "^0.2.0",
