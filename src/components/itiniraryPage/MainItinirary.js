@@ -49,13 +49,16 @@ class MainItinirary extends Component {
                       isLast = (i === (selectedRoute.legs.length - 1));
                     }
                     return (
-                        <TransitRoute
-                          style={{ top: 10 }}
-                          type={leg.mode}
-                          key={i}
-                          routeName={leg.routeShortName}
-                          isLast={isLast}
-                          />
+                      <React.Fragment key={i}>
+                          <View></View>
+                            <TransitRoute
+                              style={{ top: 10 }}
+                              type={leg.mode}
+                              routeName={leg.routeShortName}
+                              isLast={isLast}
+                              />
+                        </React.Fragment>
+
                     );
                   }
                   // if (leg.mode === 'WALK') {

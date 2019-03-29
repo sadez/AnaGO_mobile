@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { NavigationActions } from 'react-navigation';
 import { RootNavigator } from '../Route/Navigator';
+import resultApi from '../assets/api.json';
 
 // Author : Salim Aboubakri
 // Date : 02/10/2018
@@ -70,7 +71,7 @@ function user(state = initialUserState, action) {
 const initialMapState = {
   positionMarker1: { lat: 0, lon: 0, address: '' },
   positionMarker2: { lat: 0, lon: 0, address: '' },
-  dataEndpoint: {},
+  dataEndpoint: resultApi,
   selectedRoute: {
     duration: 2039,
     startTime: 1553707137000,
