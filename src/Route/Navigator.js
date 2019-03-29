@@ -9,6 +9,7 @@ import MainMap from '../components/mainPage/MainMap';
 import MainResult from '../components/resultPage/MainResult';
 import MainItinirary from '../components/itiniraryPage/MainItinirary';
 import MainDetailMap from '../components/detailMap/MainDetailMap';
+import InputSelectMain from '../components/inputSelectPage/InputSelectMain';
 
 const middleware = createReactNavigationReduxMiddleware(
   'root',
@@ -37,6 +38,7 @@ const RootNavigator = createStackNavigator({
   MainMap: { screen: MainMap },
   MainResult: { screen: MainResult },
   MainItinirary: { screen: MainItinirary },
+  InputSelectMain: { screen: InputSelectMain },
   MainDetailMap: { screen: MainDetailMap },
 },
 {

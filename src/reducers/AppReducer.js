@@ -69,8 +69,8 @@ function user(state = initialUserState, action) {
 
 // Reducer of user and token
 const initialMapState = {
-  positionMarker1: { lat: 0, lon: 0, address: '' },
-  positionMarker2: { lat: 0, lon: 0, address: '' },
+  positionMarker1: { lat: 33.58821963230516, lon: -7.637300491333009, address: 'Gare Casa Voyageurs' },
+  positionMarker2: { lat: 33.5912539, lon: -7.636147500000001, address: 'Gare Casa Port' },
   dataEndpoint: resultApi,
   selectedRoute: {
     duration: 2039,
